@@ -23,6 +23,8 @@ export default function ModernSidebar({ view, setView }) {
       sx={{
         width: open ? 220 : 64,
         flexShrink: 0,
+        height: '100vh',
+        overflow: 'hidden',
         '& .MuiDrawer-paper': {
           width: open ? 220 : 64,
           boxSizing: 'border-box',
@@ -30,6 +32,8 @@ export default function ModernSidebar({ view, setView }) {
           color: '#e0e0e0',
           borderRight: 'none',
           transition: 'width 0.2s',
+          height: '100vh',
+          overflow: 'hidden',
         },
       }}
     >
@@ -40,7 +44,7 @@ export default function ModernSidebar({ view, setView }) {
         {open && <span style={{ fontWeight: 700, fontSize: 20, marginLeft: 4, lineHeight: 1, color: '#e0e0e0', letterSpacing: 1 }}>AdCharts</span>}
       </Box>
       <Divider sx={{ background: "#292d36" }} />
-      <List sx={{ mt: 2 }}>
+      <List sx={{ mt: 2, overflow: 'hidden' }}>
         {menuItems.map((item) => (
           <ListItem
             button
