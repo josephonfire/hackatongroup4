@@ -23,17 +23,16 @@ function LoginPage() {
 
   return (
     <>
-     
-
-      
 
       <div className="App">
         <Login /> <br />
       </div>
+
+
       <footer className="text-gray-500 text-sm text-center">
-        © {new Date().getFullYear()} Magic Deck Builder created by Group 5 - Bytes4Future
+        <Footer />
       </footer>
-      </div >
+    
     </>
   );
 }
