@@ -95,3 +95,18 @@
   font-size: 0.875rem;
   margin-top: -0.5rem;
 }
+
+@media (max-width: 600px) {
+  .signup-container {
+    padding: 16px 0;
+    min-height: 100vh;
+  }
+  .signup-box {
+    max-width: 100%;
+    padding: 1rem;
+    margin: 0 8px;
+  }
+  .signup-title {
+    font-size: 1.5rem;
+  }
+}
