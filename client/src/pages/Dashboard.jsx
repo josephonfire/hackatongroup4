@@ -33,7 +33,7 @@ export default function Dashboard() {
   };
   // Event button to add campaign
   const handleAddCampaign = () => {
-    // logic to add campaign
+
     alert('Add new campaign!');
     setAnchorEl(null);
   };
