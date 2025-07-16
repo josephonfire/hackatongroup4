@@ -11,14 +11,14 @@ function LoginPage() {
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem('token');
-    const username = localStorage.getItem('username');
+    const email = localStorage.getItem('email');
     if (
       token &&
-      username &&
-      username !== 'null' &&
-      username !== 'undefined'
+      email &&
+      email !== 'null' &&
+      email !== 'undefined'
     ) {
-      navigate(`/profile/${username}`, { replace: true });
+      navigate(`/profile/${email}`, { replace: true });
     }
   }, [navigate]);
 
