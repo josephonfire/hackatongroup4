@@ -43,15 +43,27 @@ function CustomTooltip({ active, payload, label, whiteBg }) {
   );
 }
 
-export default function ModernLineChart({ data, whiteBg }) {
+export default function ModernLineChart({ data, whiteBg, height = 180 }) {
   return (
-    <ResponsiveContainer width="100%" height={180}>
+    <ResponsiveContainer width="100%" height={height}>
       <LineChart data={data} margin={{ top: 8, right: 12, left: 0, bottom: 8 }}>
         <CartesianGrid stroke={whiteBg ? '#e0e0e0' : '#333'} strokeDasharray="3 3" vertical={false} />
-        <XAxis dataKey="day" tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500 }} />
-        <YAxis tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500 }} />
+        <XAxis 
+          dataKey="day" 
+          tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500, fontSize: 11 }}
+          interval={data.length > 15 ? Math.floor(data.length / 10) : 0}
+        />
+        <YAxis tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500, fontSize: 11 }} />
         <Tooltip content={<CustomTooltip whiteBg={whiteBg} />} />
-        <Legend iconType="circle" wrapperStyle={{ paddingTop: 4, color: whiteBg ? '#23263a' : '#fff', fontWeight: 600, fontSize: 12 }} />
+        <Legend 
+          iconType="circle" 
+          wrapperStyle={{ 
+            paddingTop: 4, 
+            color: whiteBg ? '#23263a' : '#fff', 
+            fontWeight: 600, 
+            fontSize: 11 
+          }} 
+        />
         <Line type="monotone" dataKey="Instagram" stroke={COLORS.Instagram} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />
         <Line type="monotone" dataKey="Facebook" stroke={COLORS.Facebook} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />
         <Line type="monotone" dataKey="TikTok" stroke={COLORS.TikTok} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />

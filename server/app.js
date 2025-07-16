@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const campaignsRouter = require('./routes/campaigns');
+const dashboardData = require('./data/dashboard-data.json');
 const dotenv = require('dotenv');
 dotenv.config();
 
@@ -38,6 +39,15 @@ app.use('/api/instagram', instagramRouter);
 app.use('/api/linkedin', linkedinRouter);
 app.use('/api/x', xRouter);
 app.use('/api/tiktok', tiktokRouter);
+
+// Dashboard data endpoint
+app.get('/api/dashboard-data', (req, res) => {
+  try {
+    res.json(dashboardData);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to load dashboard data' });
+  }
+});
 
 // Monta o router em /api/signup
 app.use('/api/signup', signupRouter);
