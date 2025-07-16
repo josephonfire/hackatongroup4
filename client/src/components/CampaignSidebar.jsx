@@ -1,345 +1,203 @@
-import React, { useState } from 'react';
-import { Drawer, List, ListItem, ListItemText, Toolbar, Typography, IconButton, Menu, MenuItem, Fab, Box, Button } from '@mui/material';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import AddIcon from '@mui/icons-material/Add';
-
-const drawerWidth = 240;
-const sidebarBg = '#23263a';
+import React, { useState } from "react";
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
+import {
+    Button as AriaButton,
+    Dialog as AriaDialog,
+    DialogTrigger as AriaDialogTrigger,
+    Modal as AriaModal,
+    ModalOverlay as AriaModalOverlay,
+} from "react-aria-components";
+import '../styles/CampaignSidebar.css';
 
 export default function CampaignSidebar({ campaigns, selected, onSelect, onBgToggle, sidebarBg, sidebarText, setView, view, whiteBg }) {
-  const [anchorEl, setAnchorEl] = useState(null);
+    const [modalOpen, setModalOpen] = useState(false);
 
-  // Botão evento para abrir o menu de campanhas
-  const handleMenuOpen = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  // Botão evento para fechar o menu de campanhas
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-  };
-  // Botão evento para adicionar campanha
-  const handleAddCampaign = () => {
-    // lógica para adicionar campanha
-    alert('Adicionar nova campanha!');
-    setAnchorEl(null);
-  };
+    // Sidebar fixa para desktop
+    const SidebarDesktop = (
+        <aside className="campaign-sidebar-desktop">
+            <div className="campaign-sidebar-header">
+                <span className="campaign-sidebar-title" style={{ color: sidebarText || '#fff' }}>AdCharts</span>
+                <button
+                    onClick={onBgToggle}
+                    aria-label="Alternar tema"
+                    className="campaign-sidebar-theme-btn"
+                    style={{ color: sidebarText === '#fff' ? '#fff' : '#222e3c' }}
+                >
+                    {whiteBg ? (
+                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.343 17.657l-1.414 1.414m12.728 0l-1.414-1.414M6.343 6.343L4.929 4.929" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/></svg>
+                    ) : (
+                        <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                    )}
+                </button>
+            </div>
+            <div className="campaign-sidebar-list">
+                {campaigns.map((name) => (
+                    <button
+                        key={name}
+                        onClick={() => onSelect(name)}
+                        className={
+                            'campaign-sidebar-btn' + (selected === name ? ' selected' : '')
+                        }
+                    >
+                        {name}
+                    </button>
+                ))}
+            </div>
+            <div className="campaign-sidebar-nav">
+                <button
+                    onClick={() => setView('dashboard')}
+                    className={
+                        'campaign-sidebar-btn' + (view === 'dashboard' ? ' selected' : '')
+                    }
+                >
+                    Dashboard
+                </button>
+                <button
+                    onClick={() => setView('pdf')}
+                    className={
+                        'campaign-sidebar-btn' + (view === 'pdf' ? ' selected' : '')
+                    }
+                >
+                    Export PDF
+                </button>
+                <button
+                    onClick={() => setView('future')}
+                    className={
+                        'campaign-sidebar-btn' + (view === 'future' ? ' selected' : '')
+                    }
+                >
+                    Future Graphs
+                </button>
+                <button
+                    onClick={() => setView('piecharts')}
+                    className={
+                        'campaign-sidebar-btn' + (view === 'piecharts' ? ' selected' : '')
+                    }
+                >
+                    PieCharts
+                </button>
+                <button
+                    onClick={() => setView('profile')}
+                    className={
+                        'campaign-sidebar-btn' + (view === 'profile' ? ' selected' : '')
+                    }
+                >
+                    Profile
+                </button>
+            </div>
+        </aside>
+    );
 
-  return (
-    <Drawer
-      variant="permanent"
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        '& .MuiDrawer-paper': {
-          width: drawerWidth,
-          boxSizing: 'border-box',
-          background: sidebarBg,
-          color: sidebarText || '#fff',
-          transition: 'background 0.3s, color 0.3s',
-        },
-      }}
-    >
-      <Toolbar
-        sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          py: 2,
-        }}
-      >
-        <Typography
-          variant="h6"
-          noWrap
-          component="div"
-          sx={{
-            fontWeight: 'bold',
-            letterSpacing: 2,
-            color: sidebarText || '#fff',
-            textShadow: '0 2px 8px rgba(0,0,0,0.12)',
-          }}
-        >
-          AdCharts
-        </Typography>
-        <IconButton
-          onClick={onBgToggle}
-          sx={{
-            color: sidebarText === '#fff' ? '#fff' : '#222e3c',
-            background: 'rgba(0,0,0,0.08)',
-            ml: 1,
-            '&:hover': {
-              background: 'rgba(0,0,0,0.15)',
-            },
-          }}
-          aria-label="toggle dark mode"
-        >
-          {whiteBg ? <Brightness4Icon /> : <Brightness7Icon />}
-        </IconButton>
-      </Toolbar>
-      <List>
-        {campaigns.map((name) => (
-          <Box key={name} sx={{ width: '100%', mb: 1 }}>
-            <Button
-              fullWidth
-            onClick={() => onSelect(name)}
-              sx={{
-                width: '85%',
-                margin: '0 auto',
-                borderRadius: 1.5,
-                background: selected === name ? (sidebarBg ? '#2d3950' : '#1a2233') : (sidebarBg || '#222e3c'),
-                color: '#fff',
-                border: selected === name ? '2px solid #fff' : '1.5px solid #fff2',
-                fontWeight: 500,
-                fontSize: 15,
-                letterSpacing: 0.5,
-                justifyContent: 'flex-start',
-                px: 1.5,
-                py: 0.7,
-                minHeight: 36,
-                boxShadow: 'none',
-                textTransform: 'none',
-                '&:hover': {
-                  background: sidebarBg ? '#2d3950' : '#1a2233',
-                  borderColor: '#fff4',
-                },
-                display: 'flex',
-                alignItems: 'center',
-                transition: 'background 0.2s, border 0.2s',
-              }}
+    // Sidebar mobile/overlay
+    const SidebarMobile = (
+        <AriaDialogTrigger>
+            <header className="campaign-sidebar-mobile-header">
+                <span className="campaign-sidebar-title" style={{ color: sidebarText || '#fff' }}>AdCharts</span>
+                <AriaButton
+                    aria-label="Expand navigation menu"
+                    className="campaign-sidebar-mobile-menu-btn"
+                >
+                    <MenuIcon style={{ width: 24, height: 24 }} />
+                </AriaButton>
+            </header>
+            <AriaModalOverlay
+                isDismissable
+                className="campaign-sidebar-modal-overlay"
             >
-              <span style={{ flexGrow: 1, textAlign: 'left' }}>{name}</span>
-            </Button>
-          </Box>
-        ))}
-        <Box sx={{ width: '100%', mb: 1 }}>
-          <Button
-            fullWidth
-            onClick={() => setView('dashboard')}
-            sx={{
-              width: '85%',
-              margin: '0 auto',
-              borderRadius: 1.5,
-              background: view === 'dashboard' ? (sidebarBg ? '#2d3950' : '#1a2233') : (sidebarBg || '#222e3c'),
-              color: '#fff',
-              border: view === 'dashboard' ? '2px solid #fff' : '1.5px solid #fff2',
-              fontWeight: 500,
-              fontSize: 15,
-              letterSpacing: 0.5,
-              justifyContent: 'flex-start',
-              px: 1.5,
-              py: 0.7,
-              minHeight: 36,
-              boxShadow: 'none',
-              textTransform: 'none',
-              '&:hover': {
-                background: sidebarBg ? '#2d3950' : '#1a2233',
-                borderColor: '#fff4',
-              },
-              display: 'flex',
-              alignItems: 'center',
-              transition: 'background 0.2s, border 0.2s',
-            }}
-          >
-            <span style={{ flexGrow: 1, textAlign: 'left' }}>Dashboard</span>
-          </Button>
-        </Box>
-        <ListItem disablePadding sx={{ display: 'block', mt: 1 }}>
-          <Button
-            aria-controls={Boolean(anchorEl) ? 'my-campaigns-menu' : undefined}
-            aria-haspopup="true"
-            onClick={handleMenuOpen}
-            sx={{
-              width: '85%',
-              margin: '0 auto',
-              borderRadius: 1.5,
-              background: sidebarBg || '#222e3c',
-              color: '#fff',
-              border: '1.5px solid #fff2',
-              fontWeight: 500,
-              fontSize: 15,
-              letterSpacing: 0.5,
-              justifyContent: 'flex-start',
-              px: 1.5,
-              py: 0.7,
-              minHeight: 36,
-              boxShadow: 'none',
-              textTransform: 'none',
-              '&:hover': {
-                background: sidebarBg ? '#2d3950' : '#1a2233',
-                borderColor: '#fff4',
-              },
-              display: 'flex',
-              alignItems: 'center',
-              transition: 'background 0.2s, border 0.2s',
-            }}
-          >
-            <span style={{ flexGrow: 1, textAlign: 'left' }}>My Campaigns</span>
-          </Button>
-          <Menu
-            id="my-campaigns-menu"
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
-            MenuListProps={{
-              sx: { minWidth: 180, p: 0 },
-            }}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-            transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-            PaperProps={{
-              sx: {
-                borderRadius: 3,
-                mt: 1,
-                background: sidebarBg, // <-- só sidebarBg
-                color: sidebarText || '#fff',
-                boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
-                p: 0,
-              },
-            }}
-          >
-            {campaigns.length === 0 && (
-              <MenuItem disabled sx={{ opacity: 0.7 }}>No campaigns</MenuItem>
-            )}
-            {campaigns.map((name) => (
-              <MenuItem key={name} onClick={() => { onSelect(name); handleMenuClose(); }}>
-                {name}
-              </MenuItem>
-            ))}
-            <Box sx={{ display: 'flex', justifyContent: 'center', p: 1 }}>
-              <Fab size="small" color="error" aria-label="add" onClick={handleAddCampaign}>
-                <AddIcon />
-              </Fab>
-            </Box>
-          </Menu>
-        </ListItem>
-        <Box sx={{ width: '100%', mb: 1 }}>
-          <Button
-            fullWidth
-            onClick={() => setView('pdf')}
-            sx={{
-              width: '85%',
-              margin: '0 auto',
-              borderRadius: 1.5,
-              background: view === 'pdf' ? (sidebarBg ? '#2d3950' : '#1a2233') : (sidebarBg || '#222e3c'),
-              color: '#fff',
-              border: view === 'pdf' ? '2px solid #fff' : '1.5px solid #fff2',
-              fontWeight: 500,
-              fontSize: 15,
-              letterSpacing: 0.5,
-              justifyContent: 'flex-start',
-              px: 1.5,
-              py: 0.7,
-              minHeight: 36,
-              boxShadow: 'none',
-              textTransform: 'none',
-              '&:hover': {
-                background: sidebarBg ? '#2d3950' : '#1a2233',
-                borderColor: '#fff4',
-              },
-              display: 'flex',
-              alignItems: 'center',
-              transition: 'background 0.2s, border 0.2s',
-            }}
-          >
-            <span style={{ flexGrow: 1, textAlign: 'left' }}>Export PDF</span>
-          </Button>
-        </Box>
-        <Box sx={{ width: '100%', mb: 1 }}>
-          <Button
-            fullWidth
-            onClick={() => setView('future')}
-            sx={{
-              width: '85%',
-              margin: '0 auto',
-              borderRadius: 1.5,
-              background: view === 'future' ? (sidebarBg ? '#2d3950' : '#1a2233') : (sidebarBg || '#222e3c'),
-              color: '#fff',
-              border: view === 'future' ? '2px solid #fff' : '1.5px solid #fff2',
-              fontWeight: 500,
-              fontSize: 15,
-              letterSpacing: 0.5,
-              justifyContent: 'flex-start',
-              px: 1.5,
-              py: 0.7,
-              minHeight: 36,
-              boxShadow: 'none',
-              textTransform: 'none',
-              '&:hover': {
-                background: sidebarBg ? '#2d3950' : '#1a2233',
-                borderColor: '#fff4',
-              },
-              display: 'flex',
-              alignItems: 'center',
-              transition: 'background 0.2s, border 0.2s',
-            }}
-          >
-            <span style={{ flexGrow: 1, textAlign: 'left' }}>Future Graphs</span>
-          </Button>
-        </Box>
-        <Box sx={{ width: '100%', mb: 1 }}>
-          <Button
-            fullWidth
-            onClick={() => setView('piecharts')}
-            sx={{
-              width: '85%',
-              margin: '0 auto',
-              borderRadius: 1.5,
-              background: view === 'piecharts' ? (sidebarBg ? '#2d3950' : '#1a2233') : (sidebarBg || '#222e3c'),
-              color: '#fff',
-              border: view === 'piecharts' ? '2px solid #fff' : '1.5px solid #fff2',
-              fontWeight: 500,
-              fontSize: 15,
-              letterSpacing: 0.5,
-              justifyContent: 'flex-start',
-              px: 1.5,
-              py: 0.7,
-              minHeight: 36,
-              boxShadow: 'none',
-              textTransform: 'none',
-              '&:hover': {
-                background: sidebarBg ? '#2d3950' : '#1a2233',
-                borderColor: '#fff4',
-              },
-              display: 'flex',
-              alignItems: 'center',
-              transition: 'background 0.2s, border 0.2s',
-            }}
-          >
-            <span style={{ flexGrow: 1, textAlign: 'left' }}>PieCharts</span>
-          </Button>
-        </Box>
-        <Box sx={{ width: '100%', mb: 1 }}>
-          <Button
-            fullWidth
-            onClick={() => setView('profile')}
-            sx={{
-              width: '85%',
-              margin: '0 auto',
-              borderRadius: 1.5,
-              background: view === 'profile' ? (sidebarBg ? '#2d3950' : '#1a2233') : (sidebarBg || '#222e3c'),
-              color: '#fff',
-              border: view === 'profile' ? '2px solid #fff' : '1.5px solid #fff2',
-              fontWeight: 500,
-              fontSize: 15,
-              letterSpacing: 0.5,
-              justifyContent: 'flex-start',
-              px: 1.5,
-              py: 0.7,
-              minHeight: 36,
-              boxShadow: 'none',
-              textTransform: 'none',
-              '&:hover': {
-                background: sidebarBg ? '#2d3950' : '#1a2233',
-                borderColor: '#fff4',
-              },
-              display: 'flex',
-              alignItems: 'center',
-              transition: 'background 0.2s, border 0.2s',
-            }}
-          >
-            <span style={{ flexGrow: 1, textAlign: 'left' }}>Profile</span>
-          </Button>
-        </Box>
-      </List>
-    </Drawer>
-  );
+                {({ state }) => (
+                    <>
+                        <AriaButton
+                            aria-label="Close navigation menu"
+                            onPress={() => state.close()}
+                            className="campaign-sidebar-modal-close-btn"
+                        >
+                            <CloseIcon style={{ width: 24, height: 24 }} />
+                        </AriaButton>
+                        <AriaModal className="campaign-sidebar-modal">
+                            <AriaDialog>
+                                <div className="campaign-sidebar-header" style={{ marginBottom: 16 }}>
+                                    <span className="campaign-sidebar-title">AdCharts</span>
+                                    <button
+                                        onClick={onBgToggle}
+                                        aria-label="Alternar tema"
+                                        className="campaign-sidebar-theme-btn"
+                                        style={{ color: sidebarText === '#fff' ? '#fff' : '#222e3c' }}
+                                    >
+                                        {whiteBg ? (
+                                            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364l-1.414 1.414M6.343 17.657l-1.414 1.414m12.728 0l-1.414-1.414M6.343 6.343L4.929 4.929" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="12" r="5" stroke="currentColor" strokeWidth="2"/></svg>
+                                        ) : (
+                                            <svg width="24" height="24" fill="none" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                                        )}
+                                    </button>
+                                </div>
+                                <div className="campaign-sidebar-list">
+                                    {campaigns.map((name) => (
+                                        <button
+                                            key={name}
+                                            onClick={() => { onSelect(name); state.close(); }}
+                                            className={
+                                                'campaign-sidebar-btn' + (selected === name ? ' selected' : '')
+                                            }
+                                        >
+                                            {name}
+                                        </button>
+                                    ))}
+                                </div>
+                                <div className="campaign-sidebar-nav">
+                                    <button
+                                        onClick={() => { setView('dashboard'); state.close(); }}
+                                        className={
+                                            'campaign-sidebar-btn' + (view === 'dashboard' ? ' selected' : '')
+                                        }
+                                    >
+                                        Dashboard
+                                    </button>
+                                    <button
+                                        onClick={() => { setView('pdf'); state.close(); }}
+                                        className={
+                                            'campaign-sidebar-btn' + (view === 'pdf' ? ' selected' : '')
+                                        }
+                                    >
+                                        Export PDF
+                                    </button>
+                                    <button
+                                        onClick={() => { setView('future'); state.close(); }}
+                                        className={
+                                            'campaign-sidebar-btn' + (view === 'future' ? ' selected' : '')
+                                        }
+                                    >
+                                        Future Graphs
+                                    </button>
+                                    <button
+                                        onClick={() => { setView('piecharts'); state.close(); }}
+                                        className={
+                                            'campaign-sidebar-btn' + (view === 'piecharts' ? ' selected' : '')
+                                        }
+                                    >
+                                        PieCharts
+                                    </button>
+                                    <button
+                                        onClick={() => { setView('profile'); state.close(); }}
+                                        className={
+                                            'campaign-sidebar-btn' + (view === 'profile' ? ' selected' : '')
+                                        }
+                                    >
+                                        Profile
+                                    </button>
+                                </div>
+                            </AriaDialog>
+                        </AriaModal>
+                    </>
+                )}
+            </AriaModalOverlay>
+        </AriaDialogTrigger>
+    );
+
+    return (
+        <>
+            {SidebarDesktop}
+            {SidebarMobile}
+        </>
+    );
 }
