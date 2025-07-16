@@ -29,10 +29,10 @@ export default function Dashboard() {
     setWhiteBg((prev) => !prev);
   };
 
-  const pageBg = whiteBg ? '#fff' : '#222e3c';
-  const pageText = whiteBg ? '#222e3c' : '#fff';
-  const sidebarBg = whiteBg ? '#111' : '#222e3c';
-  const sidebarText = whiteBg ? '#fff' : '#fff';
+  const pageBg = whiteBg ? '#fdfdfd' : '#151623';
+  const pageText = whiteBg ? '#151623' : '#fdfdfd';
+  const sidebarBg = whiteBg ? '#111' : '#151623';
+  const sidebarText = whiteBg ? '#fdfdfd' : '#fdfdfd';
 
   // Placeholder for future backend data
   const campaignData = [];
@@ -65,7 +65,7 @@ export default function Dashboard() {
           top: 24,
           left: sidebarOpen ? 250 : 24,
           zIndex: 1300,
-          background: '#fff',
+          background: '#fdfdfd',
           boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
           transition: 'left 0.3s',
         }}
