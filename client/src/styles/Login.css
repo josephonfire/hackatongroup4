@@ -9,7 +9,7 @@
 
 
 
-/* App layout styles */
+
 body {
     margin: 0;
     font-family: 'Lato', Arial, sans-serif;
@@ -28,6 +28,7 @@ body {
 .login-wrapper {
     width: 100%;
     max-width: 400px;
+    margin: auto;
 }
 
 .login-box {

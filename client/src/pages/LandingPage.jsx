@@ -1,14 +1,13 @@
 import React from 'react';
 import '../styles/landingPage.css';
+import LoginPage from '../components/Login';
 
 const LandingPage = () => {
   return (
     <div className="landing-container">
       <div className="left-section">
         <div className="logo">
-          {[...Array(8)].map((_, i) => (
-            <div key={i} className={`circle circle-${i}`} />
-          ))}
+            <img src="/img/logo.png" alt="Logo" />
         </div>
         <div className="slogan">
           <h1>
@@ -20,12 +19,7 @@ const LandingPage = () => {
       </div>
 
       <div className="right-section">
-        {/* Replace this with your actual form component */}
-        <form className="login-form">
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <button type="submit">Login</button>
-        </form>
+        <LoginPage />
       </div>
     </div>
   );

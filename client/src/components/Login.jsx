@@ -66,9 +66,6 @@ function Login() {
                 placeholder="Enter your password"
               />
             </div>
-            <div className="forgot-password">
-              <a href="/forgot-password">Forgot your password?</a>
-            </div>
             <button type="submit" className="login-button">Login</button>
           </form>
           <div className="signup-link">
