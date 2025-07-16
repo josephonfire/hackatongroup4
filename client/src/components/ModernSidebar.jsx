@@ -11,11 +11,9 @@ export default function ModernSidebar({ view, setView }) {
   const [open, setOpen] = React.useState(true);
 
   const menuItems = [
-    { text: "Dashboard", icon: <DashboardIcon />, view: "dashboard" },
-    { text: "Export PDF", icon: <PictureAsPdfIcon />, view: "pdf" },
-    { text: "Future Graphs", icon: <TimelineIcon />, view: "future" },
-    { text: "PieCharts", icon: <PieChartIcon />, view: "piecharts" },
     { text: "Profile", icon: <AccountCircleIcon />, view: "profile" },
+    { text: "Dashboard", icon: <DashboardIcon />, view: "dashboard" },
+    { text: "Future Graphs", icon: <TimelineIcon />, view: "future" },
   ];
 
   return (
@@ -48,7 +46,13 @@ export default function ModernSidebar({ view, setView }) {
             button
             key={item.text}
             selected={view === item.view}
-            onClick={() => setView(item.view)}
+            onClick={() => {
+              if (item.view === "profile") {
+                // setView(item.view); // This line is removed as per the edit hint
+              } else {
+                setView(item.view);
+              }
+            }}
             sx={{
               borderRadius: 2.5,
               margin: '10px 12px',
