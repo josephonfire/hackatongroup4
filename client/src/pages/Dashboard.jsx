@@ -105,14 +105,8 @@ export default function Dashboard() {
   const normalize = (str) => (str || "").toLowerCase().replace(/[^a-z0-9]/gi, '');
   const normalizedSocials = (connectedSocials || []).map(normalize);
 
-  const filteredPieData = (pieData || []).filter(item => normalizedSocials.includes(normalize(item.name)));
-  const filteredSeasonData = (currentSeasonData || []).map(day => {
-    const filtered = { ...day };
-    Object.keys(filtered).forEach(key => {
-      if (key !== 'day' && !normalizedSocials.includes(normalize(key))) delete filtered[key];
-    });
-    return filtered;
-  });
+  const filteredPieData = pieData || [];
+  const filteredSeasonData = currentSeasonData || [];
 
   // Log para depuração
   console.log('DADOS PARA O GRÁFICO:', filteredSeasonData);
