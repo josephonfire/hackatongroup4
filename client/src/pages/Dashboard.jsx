@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SummaryCards from "../components/SummaryCards";
 import BarChartComponent from "../components/BarChart";
 import PieChartComponent from "../components/PieChart";
@@ -42,6 +42,7 @@ export default function Dashboard() {
   const [campaignName, setCampaignName] = useState("");
   const [platform, setPlatform] = useState("");
   const [investment, setInvestment] = useState("");
+  const dashboardRef = useRef();
 
   // Botão evento para abrir o menu de campanhas
   const handleMenuOpen = (event) => {
@@ -140,8 +141,12 @@ export default function Dashboard() {
         <MenuIcon />
       </IconButton>
       <Box component="main" sx={{ flexGrow: 1, p: 3, color: pageText }}>
+        {/* Export PDF Button */}
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
+          <ExportPDF exportRef={dashboardRef} fileName="dashboard.pdf" />
+        </Box>
         {/* Banner */}
-        <Box className="dashboard-container" style={{ background: 'transparent' }}>
+        <Box className="dashboard-container" style={{ background: 'transparent' }} ref={dashboardRef}>
           {/* Cards */}
           <Box className="dashboard-cards">
             <Box className="dashboard-card" style={{ background: cardBg, color: cardText, boxShadow: cardShadow }}>
