@@ -69,12 +69,12 @@ export default function Dashboard() {
       <Box component="main" sx={{ flexGrow: 1, p: 3, color: pageText }}>
         {view === 'dashboard' && (
           <>
-            <Typography variant="h4" gutterBottom>
+            <Typography variant="h4" gutterBottom sx={{ color: pageText }}>
               {selectedCampaign} – Dashboard
             </Typography>
             <SummaryCards data={campaignData} />
             <Divider sx={{ my: 3 }} />
-            <Typography variant="h6">Performance Over Time</Typography>
+            <Typography variant="h6" gutterBottom sx={{ color: pageText }}>Performance Over Time</Typography>
             <BarChartComponent data={campaignData} />
             <Divider sx={{ my: 3 }} />
           </>

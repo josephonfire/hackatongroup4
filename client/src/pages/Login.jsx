@@ -2,6 +2,7 @@ import Login from "../components/Login";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../components/Footer";
+import '../styles/Login.css';
 
 
 // Pagina do login do site. 
