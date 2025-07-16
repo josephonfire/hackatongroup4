@@ -42,7 +42,7 @@ export default function Dashboard() {
   };
   // Event button to add campaign
   const handleAddCampaign = () => {
-    // logic to add campaign
+
     alert('Add new campaign!');
     setAnchorEl(null);
   };
@@ -53,7 +53,7 @@ export default function Dashboard() {
     setInvestment("");
   };
   const handleDialogSave = () => {
-    // Aqui você pode adicionar a lógica para salvar a campanha
+  
     setDialogOpen(false);
     setCampaignName("");
     setPlatform("");
