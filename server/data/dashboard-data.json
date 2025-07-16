@@ -10,46 +10,11 @@
     "bestCampaign": "Summer Sale"
   },
   "platforms": [
-    {
-      "name": "Instagram",
-      "revenue": 16500,
-      "cost": 2400,
-      "impressions": 27000,
-      "clicks": 2100,
-      "conversions": 190
-    },
-    {
-      "name": "Facebook",
-      "revenue": 15000,
-      "cost": 2100,
-      "impressions": 25000,
-      "clicks": 1800,
-      "conversions": 165
-    },
-    {
-      "name": "TikTok",
-      "revenue": 17500,
-      "cost": 2550,
-      "impressions": 30000,
-      "clicks": 2250,
-      "conversions": 205
-    },
-    {
-      "name": "LinkedIn",
-      "revenue": 7500,
-      "cost": 1300,
-      "impressions": 9500,
-      "clicks": 750,
-      "conversions": 55
-    },
-    {
-      "name": "X",
-      "revenue": 9200,
-      "cost": 1550,
-      "impressions": 17500,
-      "clicks": 1300,
-      "conversions": 115
-    }
+    { "name": "Instagram", "revenue": 16500, "cost": 2400, "impressions": 27000, "clicks": 2100, "conversions": 190 },
+    { "name": "Facebook", "revenue": 15000, "cost": 2100, "impressions": 25000, "clicks": 1800, "conversions": 165 },
+    { "name": "TikTok", "revenue": 17500, "cost": 2550, "impressions": 30000, "clicks": 2250, "conversions": 205 },
+    { "name": "LinkedIn", "revenue": 7500, "cost": 1300, "impressions": 9500, "clicks": 750, "conversions": 55 },
+    { "name": "X", "revenue": 9200, "cost": 1550, "impressions": 17500, "clicks": 1300, "conversions": 115 }
   ],
   "pieData": [
     { "name": "Instagram", "value": 16500 },
@@ -60,67 +25,47 @@
   ],
   "seasonData7Days": [
     { "day": "Mon", "Instagram": 1200, "Facebook": 1000, "TikTok": 1300, "LinkedIn": 400, "X": 700 },
-    { "day": "Tue", "Instagram": 1500, "Facebook": 1100, "TikTok": 1400, "LinkedIn": 500, "X": 800 },
-    { "day": "Wed", "Instagram": 1800, "Facebook": 1300, "TikTok": 1600, "LinkedIn": 600, "X": 900 },
-    { "day": "Thu", "Instagram": 2000, "Facebook": 1400, "TikTok": 1700, "LinkedIn": 700, "X": 1000 },
-    { "day": "Fri", "Instagram": 2100, "Facebook": 1500, "TikTok": 1800, "LinkedIn": 800, "X": 1100 },
-    { "day": "Sat", "Instagram": 2200, "Facebook": 1600, "TikTok": 1900, "LinkedIn": 900, "X": 1200 },
-    { "day": "Sun", "Instagram": 2300, "Facebook": 1700, "TikTok": 2000, "LinkedIn": 1000, "X": 1300 }
+    { "day": "Tue", "Instagram": 1280, "Facebook": 970, "TikTok": 1400, "LinkedIn": 410, "X": 750 },
+    { "day": "Wed", "Instagram": 1230, "Facebook": 950, "TikTok": 1500, "LinkedIn": 420, "X": 720 },
+    { "day": "Thu", "Instagram": 1350, "Facebook": 980, "TikTok": 1380, "LinkedIn": 430, "X": 800 },
+    { "day": "Fri", "Instagram": 1400, "Facebook": 940, "TikTok": 1600, "LinkedIn": 440, "X": 690 },
+    { "day": "Sat", "Instagram": 1320, "Facebook": 960, "TikTok": 1550, "LinkedIn": 450, "X": 770 },
+    { "day": "Sun", "Instagram": 1450, "Facebook": 920, "TikTok": 1480, "LinkedIn": 460, "X": 730 }
   ],
   "seasonData30Days": [
-    { "day": "Week 1", "Instagram": 1200, "Facebook": 1000, "TikTok": 1300, "LinkedIn": 400, "X": 700 },
-    { "day": "Week 2", "Instagram": 1500, "Facebook": 1100, "TikTok": 1400, "LinkedIn": 500, "X": 800 },
-    { "day": "Week 3", "Instagram": 1800, "Facebook": 1300, "TikTok": 1600, "LinkedIn": 600, "X": 900 },
-    { "day": "Week 4", "Instagram": 2000, "Facebook": 1400, "TikTok": 1700, "LinkedIn": 700, "X": 1000 },
-    { "day": "Week 5", "Instagram": 2100, "Facebook": 1500, "TikTok": 1800, "LinkedIn": 800, "X": 1100 },
-    { "day": "Week 6", "Instagram": 2200, "Facebook": 1600, "TikTok": 1900, "LinkedIn": 900, "X": 1200 },
-    { "day": "Week 7", "Instagram": 2300, "Facebook": 1700, "TikTok": 2000, "LinkedIn": 1000, "X": 1300 },
-    { "day": "Week 8", "Instagram": 2400, "Facebook": 1800, "TikTok": 2100, "LinkedIn": 1100, "X": 1400 },
-    { "day": "Week 9", "Instagram": 2600, "Facebook": 1900, "TikTok": 2200, "LinkedIn": 1200, "X": 1500 },
-    { "day": "Week 10", "Instagram": 2800, "Facebook": 2000, "TikTok": 2300, "LinkedIn": 1300, "X": 1600 },
-    { "day": "Week 11", "Instagram": 3000, "Facebook": 2100, "TikTok": 2400, "LinkedIn": 1400, "X": 1700 },
-    { "day": "Week 12", "Instagram": 3200, "Facebook": 2200, "TikTok": 2500, "LinkedIn": 1500, "X": 1800 },
-    { "day": "Week 13", "Instagram": 3400, "Facebook": 2300, "TikTok": 2600, "LinkedIn": 1600, "X": 1900 },
-    { "day": "Week 14", "Instagram": 3600, "Facebook": 2400, "TikTok": 2700, "LinkedIn": 1700, "X": 2000 },
-    { "day": "Week 15", "Instagram": 3800, "Facebook": 2500, "TikTok": 2800, "LinkedIn": 1800, "X": 2100 },
-    { "day": "Week 16", "Instagram": 4000, "Facebook": 2600, "TikTok": 2900, "LinkedIn": 1900, "X": 2200 },
-    { "day": "Week 17", "Instagram": 4200, "Facebook": 2700, "TikTok": 3000, "LinkedIn": 2000, "X": 2300 },
-    { "day": "Week 18", "Instagram": 4400, "Facebook": 2800, "TikTok": 3100, "LinkedIn": 2100, "X": 2400 },
-    { "day": "Week 19", "Instagram": 4600, "Facebook": 2900, "TikTok": 3200, "LinkedIn": 2200, "X": 2500 },
-    { "day": "Week 20", "Instagram": 4800, "Facebook": 3000, "TikTok": 3300, "LinkedIn": 2300, "X": 2600 },
-    { "day": "Week 21", "Instagram": 5000, "Facebook": 3100, "TikTok": 3400, "LinkedIn": 2400, "X": 2700 },
-    { "day": "Week 22", "Instagram": 5200, "Facebook": 3200, "TikTok": 3500, "LinkedIn": 2500, "X": 2800 },
-    { "day": "Week 23", "Instagram": 5400, "Facebook": 3300, "TikTok": 3600, "LinkedIn": 2600, "X": 2900 },
-    { "day": "Week 24", "Instagram": 5600, "Facebook": 3400, "TikTok": 3700, "LinkedIn": 2700, "X": 3000 },
-    { "day": "Week 25", "Instagram": 5800, "Facebook": 3500, "TikTok": 3800, "LinkedIn": 2800, "X": 3100 },
-    { "day": "Week 26", "Instagram": 6000, "Facebook": 3600, "TikTok": 3900, "LinkedIn": 2900, "X": 3200 },
-    { "day": "Week 27", "Instagram": 6200, "Facebook": 3700, "TikTok": 4000, "LinkedIn": 3000, "X": 3300 },
-    { "day": "Week 28", "Instagram": 6400, "Facebook": 3800, "TikTok": 4100, "LinkedIn": 3100, "X": 3400 },
-    { "day": "Week 29", "Instagram": 6600, "Facebook": 3900, "TikTok": 4200, "LinkedIn": 3200, "X": 3500 },
-    { "day": "Week 30", "Instagram": 6800, "Facebook": 4000, "TikTok": 4300, "LinkedIn": 3300, "X": 3600 }
+    { "day": "Day 1", "Instagram": 1200, "Facebook": 1000, "TikTok": 1300, "LinkedIn": 400, "X": 700 },
+    { "day": "Day 2", "Instagram": 1280, "Facebook": 970, "TikTok": 1400, "LinkedIn": 410, "X": 750 },
+    { "day": "Day 3", "Instagram": 1230, "Facebook": 950, "TikTok": 1500, "LinkedIn": 420, "X": 720 },
+    { "day": "Day 4", "Instagram": 1350, "Facebook": 980, "TikTok": 1380, "LinkedIn": 430, "X": 800 },
+    { "day": "Day 5", "Instagram": 1400, "Facebook": 940, "TikTok": 1600, "LinkedIn": 440, "X": 690 },
+    { "day": "Day 6", "Instagram": 1320, "Facebook": 960, "TikTok": 1550, "LinkedIn": 450, "X": 770 },
+    { "day": "Day 7", "Instagram": 1450, "Facebook": 920, "TikTok": 1480, "LinkedIn": 460, "X": 730 },
+    { "day": "Day 8", "Instagram": 1380, "Facebook": 950, "TikTok": 1420, "LinkedIn": 470, "X": 760 },
+    { "day": "Day 9", "Instagram": 1420, "Facebook": 930, "TikTok": 1550, "LinkedIn": 480, "X": 710 },
+    { "day": "Day 10", "Instagram": 1300, "Facebook": 960, "TikTok": 1500, "LinkedIn": 490, "X": 780 },
+    { "day": "Day 11", "Instagram": 1460, "Facebook": 940, "TikTok": 1600, "LinkedIn": 500, "X": 720 },
+    { "day": "Day 12", "Instagram": 1400, "Facebook": 950, "TikTok": 1480, "LinkedIn": 510, "X": 770 },
+    { "day": "Day 13", "Instagram": 1500, "Facebook": 920, "TikTok": 1520, "LinkedIn": 520, "X": 730 },
+    { "day": "Day 14", "Instagram": 1350, "Facebook": 950, "TikTok": 1400, "LinkedIn": 530, "X": 760 },
+    { "day": "Day 15", "Instagram": 1420, "Facebook": 930, "TikTok": 1550, "LinkedIn": 540, "X": 710 },
+    { "day": "Day 16", "Instagram": 1300, "Facebook": 960, "TikTok": 1500, "LinkedIn": 550, "X": 780 },
+    { "day": "Day 17", "Instagram": 1460, "Facebook": 940, "TikTok": 1600, "LinkedIn": 560, "X": 720 },
+    { "day": "Day 18", "Instagram": 1400, "Facebook": 950, "TikTok": 1480, "LinkedIn": 570, "X": 770 },
+    { "day": "Day 19", "Instagram": 1500, "Facebook": 920, "TikTok": 1520, "LinkedIn": 580, "X": 730 },
+    { "day": "Day 20", "Instagram": 1350, "Facebook": 950, "TikTok": 1400, "LinkedIn": 590, "X": 760 },
+    { "day": "Day 21", "Instagram": 1420, "Facebook": 930, "TikTok": 1550, "LinkedIn": 600, "X": 710 },
+    { "day": "Day 22", "Instagram": 1300, "Facebook": 960, "TikTok": 1500, "LinkedIn": 610, "X": 780 },
+    { "day": "Day 23", "Instagram": 1460, "Facebook": 940, "TikTok": 1600, "LinkedIn": 620, "X": 720 },
+    { "day": "Day 24", "Instagram": 1400, "Facebook": 950, "TikTok": 1480, "LinkedIn": 630, "X": 770 },
+    { "day": "Day 25", "Instagram": 1500, "Facebook": 920, "TikTok": 1520, "LinkedIn": 640, "X": 730 },
+    { "day": "Day 26", "Instagram": 1350, "Facebook": 950, "TikTok": 1400, "LinkedIn": 650, "X": 760 },
+    { "day": "Day 27", "Instagram": 1420, "Facebook": 930, "TikTok": 1550, "LinkedIn": 660, "X": 710 },
+    { "day": "Day 28", "Instagram": 1300, "Facebook": 960, "TikTok": 1500, "LinkedIn": 670, "X": 780 },
+    { "day": "Day 29", "Instagram": 1460, "Facebook": 940, "TikTok": 1600, "LinkedIn": 680, "X": 720 },
+    { "day": "Day 30", "Instagram": 1400, "Facebook": 950, "TikTok": 1480, "LinkedIn": 690, "X": 770 }
   ],
   "campaigns": [
-    {
-      "name": "Summer Sale",
-      "platforms": ["Instagram", "Facebook", "TikTok", "LinkedIn", "X"],
-      "startDate": "2025-06-01",
-      "endDate": "2025-06-30",
-      "revenue": 30000,
-      "cost": 5000,
-      "impressions": 50000,
-      "clicks": 4000,
-      "conversions": 350
-    },
-    {
-      "name": "Back to School",
-      "platforms": ["Instagram", "Facebook", "TikTok", "LinkedIn", "X"],
-      "startDate": "2025-07-01",
-      "endDate": "2025-07-31",
-      "revenue": 22400,
-      "cost": 4900,
-      "impressions": 57000,
-      "clicks": 4200,
-      "conversions": 380
-    }
+    { "name": "Summer Sale", "platforms": ["Instagram", "Facebook", "TikTok", "LinkedIn", "X"], "startDate": "2025-06-01", "endDate": "2025-06-30", "revenue": 30000, "cost": 5000, "impressions": 50000, "clicks": 4000, "conversions": 350 },
+    { "name": "Back to School", "platforms": ["Instagram", "Facebook", "TikTok", "LinkedIn", "X"], "startDate": "2025-07-01", "endDate": "2025-07-31", "revenue": 22400, "cost": 4900, "impressions": 57000, "clicks": 4200, "conversions": 380 }
   ]
 }

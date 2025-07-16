@@ -246,15 +246,18 @@ export default function Dashboard() {
                         fontSize: 12,
                         px: 2,
                         py: 0.5,
+                        background: '#151623',
                         '&.Mui-selected': {
-                          background: 'linear-gradient(90deg, #69bec4 0%, #5edc1f 100%)',
+                          background: '#69bec4',
                           color: '#23263a',
+                          borderColor: '#69bec4',
                           '&:hover': {
-                            background: 'linear-gradient(90deg, #5edc1f 0%, #69bec4 100%)',
+                            background: '#69bec4',
                           }
                         },
                         '&:hover': {
-                          background: 'rgba(105,190,196,0.1)',
+                          background: '#23263a',
+                          color: '#69bec4',
                         }
                       }
                     }}
