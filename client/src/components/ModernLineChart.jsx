@@ -14,7 +14,7 @@ import {
 const COLORS = {
   Instagram: '#e1306c',
   Facebook: '#1877f2',
-  TikTok: '#010101',
+  TikTok: '#FFD600',
   LinkedIn: '#0077b5',
   X: '#5edc1f',
 };

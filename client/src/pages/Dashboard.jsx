@@ -239,7 +239,7 @@ export default function Dashboard() {
                   }} />
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: '#d32f2f' }}>$12.34</span>
+                  <span style={{ color: '#FFD600' }}>$12.34</span>
                   <span className="card-growth negative">-2.4%</span>
                   <span
                     style={{
@@ -250,9 +250,9 @@ export default function Dashboard() {
                       width: 36,
                       height: 36,
                       borderRadius: 8,
-                      background: 'rgba(211,47,47,0.08)',
-                      border: '2px solid #d32f2f',
-                      color: '#d32f2f',
+                      background: 'rgba(255,214,0,0.08)',
+                      border: '2px solid #FFD600',
+                      color: '#FFD600',
                       fontWeight: 'bold',
                       fontSize: 22,
                       lineHeight: '36px',
