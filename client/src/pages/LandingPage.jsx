@@ -7,7 +7,7 @@ const LandingPage = () => {
     <div className="landing-container">
       <div className="left-section">
         <div className="logo">
-            <img src="/img/logo.png" alt="Logo" />
+            <img src="/img/logo.svg" alt="Logo" />
         </div>
         <div className="slogan">
           <h1>
