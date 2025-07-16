@@ -16,7 +16,7 @@ const LandingPage = () => {
           <h1>
             All your ad<br />
             <span>analytics</span><br />
-            In one place.
+            in one place.
           </h1>
         </div>
       </div>
