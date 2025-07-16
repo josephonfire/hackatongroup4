@@ -96,3 +96,9 @@
     gap: 16px;
   }
 }
+
+.chart-container {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
