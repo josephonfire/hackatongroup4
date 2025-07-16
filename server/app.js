@@ -13,13 +13,14 @@ const corsOptions = {
 
 
 // Importações de rotas
-// const signupRouter = require('./routes/signup');
+const signupRouter = require('./routes/signup');
 const facebookRouter = require('./routes/facebook');
 const instagramRouter = require('./routes/instagram');
 const linkedinRouter = require('./routes/linkedin');
 const xRouter = require('./routes/x');
 const tiktokRouter = require('./routes/tiktok');
 const { findOneUser, newUser } = require('./services/userServices');
+const loginRouter = require('./routes/login');
 
 
 const app = express();
@@ -38,8 +39,9 @@ app.use('/api/linkedin', linkedinRouter);
 app.use('/api/x', xRouter);
 app.use('/api/tiktok', tiktokRouter);
 
-// // Monta o router em /api/signup
-// app.use('/api/signup', signupRouter);
+// Monta o router em /api/signup
+app.use('/api/signup', signupRouter);
+app.use("/api/login", loginRouter);
 
 // POST do signup com condições de verificação 
 const errors = {
@@ -79,6 +81,29 @@ app.post('/api/signup', async (req, res) => {
     })
   })
 
+
+  // POST do login com condições de verificação
+  app.post('/api/login', async (req, res) => {
+    const { email, password } = req.body
+  
+    const takenEmail = await findOneUser({ email })
+    if (!takenEmail) {
+      return res.status(404).json({ "message": "O utilizador não foi encontrado!" })
+    }
+  
+    if (takenEmail.password !== password) {
+      return res.status(401).json({ "message": "A password introduzida é inválida!" })
+    }
+  
+    // Falta esta parte
+    tokensArr.push(takenEmail._id)
+  
+    return res.status(200).json({
+      "_id": takenEmail._id
+    })
+  
+  })
+  
 
 // Post para 
 module.exports = app;
