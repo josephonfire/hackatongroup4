@@ -21,6 +21,7 @@ export default function Dashboard() {
   const [platform, setPlatform] = useState("");
   const [investment, setInvestment] = useState("");
   const dashboardRef = useRef();
+  const [connectedSocials, setConnectedSocials] = useState(["Instagram", "Facebook", "TikTok", "LinkedIn", "X"]); // All connected by default
 
   // Event button to open the campaign menu
   const handleMenuOpen = (event) => {
@@ -94,6 +95,16 @@ export default function Dashboard() {
     return acc;
   }, {});
   const mostProfitablePlatform = Object.entries(totals).sort((a, b) => b[1] - a[1])[0][0];
+
+  // Filter pieData and seasonData to only include connected socials
+  const filteredPieData = pieData.filter(item => connectedSocials.includes(item.name));
+  const filteredSeasonData = seasonData.map(day => {
+    const filtered = { ...day };
+    Object.keys(filtered).forEach(key => {
+      if (key !== 'day' && !connectedSocials.includes(key)) delete filtered[key];
+    });
+    return filtered;
+  });
 
   return (
     <Box
