@@ -234,7 +234,7 @@ export default function ModernSidebar({ view, setView, dashboardRef }) {
             letterSpacing: 1,
             whiteSpace: 'nowrap'
           }}>
-            AdCharts
+            AdCharter
           </span>
         </Box>
       </Box>
