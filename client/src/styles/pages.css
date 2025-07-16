@@ -13,13 +13,13 @@
 body {
   margin: 0;
   font-family: 'Lato', Arial, sans-serif;
-  background: #f4f6f8;
+  background: #fdfdfd;
   color: #222;
 }
 
 .app-main {
   min-height: 100vh;
-  background: #f4f6f8;
+  background: #fdfdfd;
   display: flex;
 }
 
