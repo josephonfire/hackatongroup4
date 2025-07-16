@@ -25,14 +25,12 @@ export default function Dashboard() {
   const handleSidebarToggle = () => {
     setSidebarOpen(!sidebarOpen);
   };
-  const handleBgToggle = () => {
-    setWhiteBg((prev) => !prev);
-  };
+  const handleBgToggle = () => setWhiteBg((prev) => !prev);
 
-  const pageBg = whiteBg ? '#fdfdfd' : '#151623';
-  const pageText = whiteBg ? '#151623' : '#fdfdfd';
-  const sidebarBg = whiteBg ? '#111' : '#151623';
-  const sidebarText = whiteBg ? '#fdfdfd' : '#fdfdfd';
+  const pageBg = whiteBg ? '#fff' : '#222e3c';
+  const pageText = whiteBg ? '#222e3c' : '#fff';
+  const sidebarBg = whiteBg ? '#111' : '#222e3c';
+  const sidebarText = whiteBg ? '#fff' : '#fff';
 
   // Placeholder for future backend data
   const campaignData = [];
@@ -50,11 +48,7 @@ export default function Dashboard() {
           sidebarText={sidebarText}
           setView={setView}
           view={view}
-          sx={{
-            transition: 'width 0.3s',
-            width: sidebarOpen ? 240 : 0,
-            overflow: 'hidden',
-          }}
+          whiteBg={whiteBg}
         />
       )}
       {/* Sidebar toggle button (floating) */}
@@ -85,10 +79,10 @@ export default function Dashboard() {
             <Divider sx={{ my: 3 }} />
           </>
         )}
+        {view === 'profile' && <Profile />}
         {view === 'pdf' && <Typography variant="h6">PDF Export (component placeholder)</Typography>}
         {view === 'future' && <Typography variant="h6">Future Graphs (component placeholder)</Typography>}
         {view === 'piecharts' && <Typography variant="h6">PieCharts (component placeholder)</Typography>}
-        {view === 'profile' && <Profile />}
       </Box>
     </Box>
   );
