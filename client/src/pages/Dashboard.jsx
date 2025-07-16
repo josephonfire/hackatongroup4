@@ -44,7 +44,7 @@ export default function Dashboard() {
     setInvestment("");
   };
   const handleDialogSave = () => {
-    // Aqui você pode adicionar a lógica para salvar a campanha
+  
     setDialogOpen(false);
     setCampaignName("");
     setPlatform("");
