@@ -202,7 +202,19 @@ export default function Dashboard() {
                 </Box>
                 <Box sx={{ fontSize: 44, fontWeight: 900, mb: 1, letterSpacing: 1.5 }}>${summary.totalRevenue?.toLocaleString() || '0'}</Box>
                 <Box sx={{ fontWeight: 700, fontSize: 18, color: '#5edc1f', letterSpacing: 1 }}>ROI: {summary.roi?.toFixed(2)}x</Box>
-                <Box sx={{ mt: 2, fontSize: 15, color: '#23263a', opacity: 0.7 }}>Best Platform: {summary.bestPlatform}</Box>
+                <Box sx={{ mt: 1, fontSize: 16, color: '#23263a', opacity: 0.8 }}>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', mb: 1 }}>
+                    <span style={{ fontSize: 16, fontWeight: 600 }}>Investment:</span>
+                    <span style={{ fontWeight: 700, fontSize: 18, color: '#5edc1f' }}>${summary.totalCost?.toLocaleString() || '0'}</span>
+                  </Box>
+                  <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                    <span style={{ fontSize: 16, fontWeight: 600 }}>Profit:</span>
+                    <span style={{ fontWeight: 700, color: '#5edc1f', fontSize: 18 }}>${(summary.totalRevenue - summary.totalCost)?.toLocaleString() || '0'}</span>
+                  </Box>
+                </Box>
+                <Box sx={{ mt: 2, fontSize: 18, color: '#23263a', opacity: 0.7, textAlign: 'center' }}>
+                  Best Platform: <span style={{ color: getPlatformColor(summary.bestPlatform), fontWeight: 700, fontSize: 22 }}>{summary.bestPlatform}</span>
+                </Box>
               </Box>
               {/* Card: Crescimento */}
               <Box sx={{ background: '#151623', color: '#69bec4', borderRadius: 5, boxShadow: '0 4px 32px 0 #69bec422', p: 3, display: 'flex', flexDirection: 'column', alignItems: 'flex-start', justifyContent: 'center', minHeight: 100 }}>
@@ -227,7 +239,7 @@ export default function Dashboard() {
             <Box sx={{ background: '#151623', borderRadius: 6, boxShadow: '0 4px 32px 0 #69bec422', p: { xs: 2, md: 4 }, mb: 2, color: cardText, width: '100%', maxWidth: '100%', display: 'flex', flexDirection: { xs: 'column', md: 'row' }, alignItems: 'center', justifyContent: 'space-between', gap: 4 }}>
               <Box sx={{ flex: 2, minWidth: 0 }}>
                 <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
-                  <Typography variant="h6" sx={{ color: cardText, fontWeight: 800, fontSize: 20, letterSpacing: 0.2, textAlign: 'left', textShadow: whiteBg ? 'none' : '0 1px 4px #0006' }}>
+                  <Typography variant="h6" sx={{ color: cardText, fontWeight: 800, fontSize: 20, letterSpacing: 0.2, textAlign: 'left', textShadow: whiteBg ? 'none' : '0 1px 4px #0006', fontFamily: 'Inter' }}>
                     Season Progress by Platform
                   </Typography>
                   <ToggleButtonGroup
@@ -271,7 +283,7 @@ export default function Dashboard() {
                 </Box>
               </Box>
               <Box sx={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2 }}>
-                <Typography variant="h6" sx={{ color: cardText, fontWeight: 700, fontSize: 16, mb: 1 }}>Platform Distribution</Typography>
+                <Typography variant="h6" sx={{ color: cardText, fontWeight: 700, fontSize: 16, mb: 1, fontFamily: 'Inter' }}>Platform Distribution</Typography>
                 <PieChartComponent data={pieData} />
                 <Box sx={{ 
                   mt: 2, 
@@ -306,7 +318,7 @@ export default function Dashboard() {
             </Box>
             {/* Active Campaigns Section */}
             <Box sx={{ background: '#151623', borderRadius: 6, boxShadow: '0 4px 32px 0 #69bec422', p: { xs: 2, md: 4 }, mb: 2, color: cardText, width: '100%', maxWidth: '100%' }}>
-              <Typography variant="h6" sx={{ mb: 3, color: cardText, fontWeight: 800, fontSize: 20, letterSpacing: 0.2, textAlign: 'left', textShadow: whiteBg ? 'none' : '0 1px 4px #0006' }}>
+              <Typography variant="h6" sx={{ mb: 3, color: cardText, fontWeight: 800, fontSize: 20, letterSpacing: 0.2, textAlign: 'left', textShadow: whiteBg ? 'none' : '0 1px 4px #0006', fontFamily: 'Inter' }}>
                 Active Campaigns
               </Typography>
               <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, gap: 3 }}>
@@ -488,8 +500,6 @@ export default function Dashboard() {
           <Button onClick={handleDialogSave} color="primary" variant="contained" sx={{ fontWeight: 700, px: 3, background: 'linear-gradient(90deg, #5edc1f 0%, #3bbf1f 100%)', color: '#181a20', '&:hover': { background: 'linear-gradient(90deg, #3bbf1f 0%, #5edc1f 100%)', color: '#fff' } }}>Save</Button>
         </DialogActions>
       </Dialog>
-      {/* Floating PDF Export Button - moved outside main content for correct positioning */}
-      {/* Floating PDF Export Button - moved outside main content for correct positioning */}
     </Box>
   );
 }
