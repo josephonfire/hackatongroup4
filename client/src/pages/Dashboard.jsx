@@ -246,16 +246,13 @@ export default function Dashboard() {
             </Box>
             {/* Direita: 66% */}
             <Box sx={{ flex: '2 1 66%', background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: 3, minWidth: 320, color: cardText }}>
-              <Typography variant="h6" sx={{ mb: 2, color: cardText, fontWeight: 600 }}>Open Campaigns</Typography>
-              {/* My Campaigns Button */}
-              <Box sx={{ width: '100%', mb: 2 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2, gap: 2 }}>
+                <Typography variant="h6" sx={{ color: cardText, fontWeight: 600 }}>Open Campaigns</Typography>
                 <Button
                   aria-controls={Boolean(anchorEl) ? 'my-campaigns-menu' : undefined}
                   aria-haspopup="true"
                   onClick={handleMenuOpen}
                   sx={{
-                    width: '85%',
-                    margin: '0 auto',
                     borderRadius: 1.5,
                     background: cardBg,
                     color: cardText,
@@ -263,8 +260,7 @@ export default function Dashboard() {
                     fontWeight: 500,
                     fontSize: 15,
                     letterSpacing: 0.5,
-                    justifyContent: 'flex-start',
-                    px: 1.5,
+                    px: 2,
                     py: 0.7,
                     minHeight: 36,
                     boxShadow: 'none',
@@ -278,7 +274,7 @@ export default function Dashboard() {
                     transition: 'background 0.2s, border 0.2s',
                   }}
                 >
-                  <span style={{ flexGrow: 1, textAlign: 'left' }}>My Campaigns</span>
+                Create Campaign
                 </Button>
                 <Menu
                   id="my-campaigns-menu"
