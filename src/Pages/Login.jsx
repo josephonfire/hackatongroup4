@@ -1,8 +1,8 @@
-import Login from "../components/Login Form/Login";
-import NavBarHome from "../components/NavBarHome";
+import Login from "../Components/Login";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import LogoWithGlow from "../components/logowithGlow";
+import { Footer } from "../Components/Footer";
+
 
 // Pagina do login do site. 
 // Importante: o servidor deve estar rodando na porta 3030 para que a API funcione corretamente
@@ -24,22 +24,16 @@ function LoginPage() {
 
   return (
     <>
-      <div className="relative min-h-screen flex flex-col align-middle justify-evenly px-6 sm:px-10 lg:px-16 py-12 pt-0">
-      <header>
-        <NavBarHome />
-      </header>
-
-      <div className=" text-center">
-      {/* LOGOTIPO*/}
-      <LogoWithGlow /></div >
 
       <div className="App">
         <Login /> <br />
       </div>
-      <footer className="text-gray-500 text-sm text-center">
-        © {new Date().getFullYear()} Magic Deck Builder created by Group 5 - Bytes4Future
+
+
+      <footer className="text-sm text-center">
+        <Footer />
       </footer>
-      </div >
+    
     </>
   );
 }

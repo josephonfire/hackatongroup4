@@ -1,22 +1,18 @@
-import Signup from "../components/Signup";
-import NavBarHome from "../components/NavBarHome";
-import LogoWithGlow from "../components/logowithGlow";
+import Signup from "./components/Signup";
+import { Footer } from "./Components/Footer";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
+
 
 function SignUpPage() {
   return (
     <>
-      <header><NavBarHome /></header>
-
-      <div className=" text-center">
-                  {/* LOGOTIPO*/}
-                  <LogoWithGlow /></div>
-
       <div className="App">
         <Signup /> <br />
 
       </div>
-      <footer className=" text-gray-500 text-sm text-center pb-6">
-        © {new Date().getFullYear()} Magic Deck Builder created by Group 5 - Bytes4Future
+      <footer className="text-sm text-center">
+        <Footer />
       </footer>
     </>
   );
