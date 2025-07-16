@@ -14,11 +14,11 @@ function Signup() {
     e.preventDefault();
 
     if (password.length < 6) {
-      setPasswordError("A senha deve ter pelo menos 6 caracteres.");
+      setPasswordError("The password must be at least 6 characters long.");
       return;
     }
     if (password !== confirmPassword) {
-      setPasswordError("Password e Confirm Password precisam ser iguais.");
+      setPasswordError("Password and Confirm Password must be the same.");
       return;
     }
 
@@ -36,11 +36,11 @@ function Signup() {
 
       const data = await response.json();
       if (!response.ok) {
-        setPasswordError(data.error || data.message || "Erro ao criar usuário");
+        setPasswordError(data.error || data.message || "Error creating user");
         return;
       }
 
-      alert(data.message || "Usuário criado com sucesso!");
+      alert(data.message || "User created successfully!");
       setUsername("");
       setEmail("");
       setPassword("");
@@ -48,8 +48,8 @@ function Signup() {
       setPasswordError("");
       navigate("/login");
     } catch (error) {
-      console.error("Erro no signup:", error);
-      setPasswordError("Erro de rede, tente novamente.");
+      console.error("Signup error:", error);
+      setPasswordError("Network error, please try again.");
     }
   };
 
@@ -104,7 +104,7 @@ function Signup() {
           <button type="submit" className="signup-button">Sign Up</button>
           <div className="signup-login-link">
             <p>
-              Already have an account? <a href="/login">Login</a>
+              Already have an account? <a href="/">Login</a>
             </p>
           </div>
         </form>
