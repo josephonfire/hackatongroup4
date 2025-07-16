@@ -29,6 +29,7 @@ function CustomTooltip({ active, payload, label, whiteBg }) {
       boxShadow: '0 2px 8px #0002',
       padding: 12,
       fontSize: 14,
+      fontFamily: 'Inter',
       border: whiteBg ? '1px solid #e0e0e0' : '1px solid #333',
     }}>
       <div style={{ fontWeight: 700, marginBottom: 6 }}>{label}</div>
@@ -50,10 +51,10 @@ export default function ModernLineChart({ data, whiteBg, height = 180 }) {
         <CartesianGrid stroke={whiteBg ? '#e0e0e0' : '#333'} strokeDasharray="3 3" vertical={false} />
         <XAxis 
           dataKey="day" 
-          tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500, fontSize: 11 }}
+          tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500, fontSize: 11, fontFamily: 'Inter' }}
           interval={data.length > 15 ? Math.floor(data.length / 10) : 0}
         />
-        <YAxis tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500, fontSize: 11 }} />
+        <YAxis tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500, fontSize: 11, fontFamily: 'Inter' }} />
         <Tooltip content={<CustomTooltip whiteBg={whiteBg} />} />
         <Legend 
           iconType="circle" 
@@ -61,7 +62,8 @@ export default function ModernLineChart({ data, whiteBg, height = 180 }) {
             paddingTop: 4, 
             color: whiteBg ? '#23263a' : '#fff', 
             fontWeight: 600, 
-            fontSize: 11 
+            fontSize: 11,
+            fontFamily: 'Inter'
           }} 
         />
         <Line type="monotone" dataKey="Instagram" stroke={COLORS.Instagram} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />
