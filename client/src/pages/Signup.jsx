@@ -1,5 +1,5 @@
-import Signup from "./components/Signup";
-import { Footer } from "./Components/Footer";
+import Signup from "../components/Signup";
+import { Footer } from "../components/Footer";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom"; 
 
