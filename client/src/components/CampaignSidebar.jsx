@@ -81,7 +81,7 @@ export default function CampaignSidebar({ campaigns, selected, onSelect, onBgTog
           <Box key={name} sx={{ width: '100%', mb: 1 }}>
             <Button
               fullWidth
-              onClick={() => onSelect(name)}
+            onClick={() => onSelect(name)}
               sx={{
                 width: '85%',
                 margin: '0 auto',

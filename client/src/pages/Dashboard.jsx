@@ -10,11 +10,18 @@ import {
   CssBaseline,
   IconButton,
   Divider,
+  Button,
+  Menu,
+  MenuItem,
+  Fab,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../styles/BarChart.css";
 import Profile from "../components/Profile";
 import "../styles/Dashboard.css";
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import AddIcon from '@mui/icons-material/Add';
 
 export default function Dashboard() {
   const [selectedCampaign, setSelectedCampaign] = useState("");
@@ -22,6 +29,22 @@ export default function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [whiteBg, setWhiteBg] = useState(false);
   const [view, setView] = useState("dashboard");
+  const [anchorEl, setAnchorEl] = useState(null);
+
+  // Botão evento para abrir o menu de campanhas
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  // Botão evento para fechar o menu de campanhas
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+  // Botão evento para adicionar campanha
+  const handleAddCampaign = () => {
+    // lógica para adicionar campanha
+    alert('Adicionar nova campanha!');
+    setAnchorEl(null);
+  };
 
   const pageBg = whiteBg ? '#f5f6fa' : '#181a20';
   const pageText = whiteBg ? '#222e3c' : '#5edc1f';
@@ -99,34 +122,118 @@ export default function Dashboard() {
           <Box className="dashboard-cards">
             <Box className="dashboard-card" style={{ background: cardBg, color: cardText, boxShadow: cardShadow }}>
               <div className="card-title">Potential growth</div>
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span className="card-value" style={{ color: '#5edc1f' }}>$12.34</span>
                 <span className="card-growth positive">+3.5%</span>
-                <span className="card-icon">↑</span>
+                <span
+                  className="card-icon"
+                  style={{
+                    marginLeft: 16,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 36,
+                    height: 36,
+                    borderRadius: 8,
+                    background: 'rgba(94,220,31,0.08)',
+                    border: '2px solid #5edc1f',
+                    color: '#5edc1f',
+                    fontWeight: 'bold',
+                    fontSize: 22,
+                    lineHeight: '36px',
+                    textAlign: 'center',
+                    padding: 0,
+                  }}
+                >
+                  ↑
+                </span>
               </div>
             </Box>
             <Box className="dashboard-card" style={{ background: cardBg, color: cardText, boxShadow: cardShadow }}>
               <div className="card-title">Revenue current</div>
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span className="card-value" style={{ color: '#5edc1f' }}>$17.34</span>
                 <span className="card-growth positive">+11%</span>
-                <span className="card-icon">↑</span>
+                <span
+                  className="card-icon"
+                  style={{
+                    marginLeft: 16,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 36,
+                    height: 36,
+                    borderRadius: 8,
+                    background: 'rgba(94,220,31,0.08)',
+                    border: '2px solid #5edc1f',
+                    color: '#5edc1f',
+                    fontWeight: 'bold',
+                    fontSize: 22,
+                    lineHeight: '36px',
+                    textAlign: 'center',
+                    padding: 0,
+                  }}
+                >
+                  ↑
+                </span>
               </div>
             </Box>
             <Box className="dashboard-card" style={{ background: cardBg, color: cardText, boxShadow: cardShadow }}>
               <div className="card-title">Daily Income</div>
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span className="card-value" style={{ color: '#d32f2f' }}>$12.34</span>
                 <span className="card-growth negative">-2.4%</span>
-                <span className="card-icon">↓</span>
+                <span
+                  className="card-icon"
+                  style={{
+                    marginLeft: 16,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 36,
+                    height: 36,
+                    borderRadius: 8,
+                    background: 'rgba(211,47,47,0.08)',
+                    border: '2px solid #d32f2f',
+                    color: '#d32f2f',
+                    fontWeight: 'bold',
+                    fontSize: 22,
+                    lineHeight: '36px',
+                    textAlign: 'center',
+                    padding: 0,
+                  }}
+                >
+                  ↓
+                </span>
               </div>
             </Box>
             <Box className="dashboard-card" style={{ background: cardBg, color: cardText, boxShadow: cardShadow }}>
               <div className="card-title">Expense current</div>
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span className="card-value" style={{ color: '#5edc1f' }}>$31.53</span>
                 <span className="card-growth positive">+3.5%</span>
-                <span className="card-icon">↑</span>
+                <span
+                  className="card-icon"
+                  style={{
+                    marginLeft: 16,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: 36,
+                    height: 36,
+                    borderRadius: 8,
+                    background: 'rgba(94,220,31,0.08)',
+                    border: '2px solid #5edc1f',
+                    color: '#5edc1f',
+                    fontWeight: 'bold',
+                    fontSize: 22,
+                    lineHeight: '36px',
+                    textAlign: 'center',
+                    padding: 0,
+                  }}
+                >
+                  ↑
+                </span>
               </div>
             </Box>
           </Box>
@@ -140,6 +247,75 @@ export default function Dashboard() {
             {/* Direita: 66% */}
             <Box sx={{ flex: '2 1 66%', background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: 3, minWidth: 320, color: cardText }}>
               <Typography variant="h6" sx={{ mb: 2, color: cardText, fontWeight: 600 }}>Open Campaigns</Typography>
+              {/* My Campaigns Button */}
+              <Box sx={{ width: '100%', mb: 2 }}>
+                <Button
+                  aria-controls={Boolean(anchorEl) ? 'my-campaigns-menu' : undefined}
+                  aria-haspopup="true"
+                  onClick={handleMenuOpen}
+                  sx={{
+                    width: '85%',
+                    margin: '0 auto',
+                    borderRadius: 1.5,
+                    background: cardBg,
+                    color: cardText,
+                    border: '1.5px solid #fff2',
+                    fontWeight: 500,
+                    fontSize: 15,
+                    letterSpacing: 0.5,
+                    justifyContent: 'flex-start',
+                    px: 1.5,
+                    py: 0.7,
+                    minHeight: 36,
+                    boxShadow: 'none',
+                    textTransform: 'none',
+                    '&:hover': {
+                      background: whiteBg ? '#f5f6fa' : '#23263a',
+                      borderColor: '#fff4',
+                    },
+                    display: 'flex',
+                    alignItems: 'center',
+                    transition: 'background 0.2s, border 0.2s',
+                  }}
+                >
+                  <span style={{ flexGrow: 1, textAlign: 'left' }}>My Campaigns</span>
+                </Button>
+                <Menu
+                  id="my-campaigns-menu"
+                  anchorEl={anchorEl}
+                  open={Boolean(anchorEl)}
+                  onClose={handleMenuClose}
+                  MenuListProps={{
+                    sx: { minWidth: 180, p: 0 },
+                  }}
+                  anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                  transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                  PaperProps={{
+                    sx: {
+                      borderRadius: 3,
+                      mt: 1,
+                      background: cardBg,
+                      color: cardText,
+                      boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
+                      p: 0,
+                    },
+                  }}
+                >
+                  {campaigns.length === 0 && (
+                    <MenuItem disabled sx={{ opacity: 0.7 }}>No campaigns</MenuItem>
+                  )}
+                  {campaigns.map((name) => (
+                    <MenuItem key={name} onClick={() => { setSelectedCampaign(name); handleMenuClose(); }}>
+                      {name}
+                    </MenuItem>
+                  ))}
+                  <Box sx={{ display: 'flex', justifyContent: 'center', p: 1 }}>
+                    <Fab size="small" color="error" aria-label="add" onClick={handleAddCampaign}>
+                      <AddIcon />
+                    </Fab>
+                  </Box>
+                </Menu>
+              </Box>
               {/* Adicione aqui o conteúdo desejado */}
             </Box>
           </Box>
@@ -160,7 +336,7 @@ export default function Dashboard() {
         {view === "piecharts" && (
           <Typography variant="h6">
             PieCharts (component placeholder)
-          </Typography>
+            </Typography>
         )}
       </Box>
     </Box>
