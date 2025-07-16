@@ -48,7 +48,7 @@ export default function ModernLineChart({ data, whiteBg }) {
     <ResponsiveContainer width="100%" height={320}>
       <LineChart data={data} margin={{ top: 16, right: 24, left: 0, bottom: 0 }}>
         <CartesianGrid stroke={whiteBg ? '#e0e0e0' : '#333'} strokeDasharray="3 3" vertical={false} />
-        <XAxis dataKey="dia" tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500 }} />
+        <XAxis dataKey="day" tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500 }} />
         <YAxis tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500 }} />
         <Tooltip content={<CustomTooltip whiteBg={whiteBg} />} />
         <Legend iconType="circle" wrapperStyle={{ paddingTop: 8, color: whiteBg ? '#23263a' : '#fff', fontWeight: 600 }} />
