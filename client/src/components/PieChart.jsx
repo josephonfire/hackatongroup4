@@ -19,6 +19,7 @@ function CustomTooltip({ active, payload }) {
         boxShadow: '0 2px 8px #0002',
         padding: 12,
         fontSize: 14,
+        fontFamily: 'Inter',
         border: '1px solid #333',
       }}>
         <div style={{ fontWeight: 700, marginBottom: 6 }}>{payload[0].name}</div>
@@ -33,7 +34,7 @@ function CustomTooltip({ active, payload }) {
 
 export default function PieChartComponent({ data }) {
   return (
-    <ResponsiveContainer width="100%" height={200}>
+    <ResponsiveContainer width="100%" height={220}>
       <PieChart>
         <Pie
           data={data}
@@ -59,11 +60,15 @@ export default function PieChartComponent({ data }) {
         <Legend 
           iconType="circle"
           wrapperStyle={{
-            paddingTop: 8,
+            paddingTop: 12,
             color: '#69bec4',
             fontWeight: 600,
-            fontSize: 11
+            fontSize: 11,
+            fontFamily: 'Inter'
           }}
+          verticalAlign="bottom"
+          align="center"
+          layout="horizontal"
         />
       </PieChart>
     </ResponsiveContainer>
