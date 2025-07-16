@@ -59,6 +59,9 @@ export default function CampaignSidebar({ campaigns, selected, onSelect, onBgTog
         <ListItem button onClick={() => setView('piecharts')} selected={view === 'piecharts'}>
           <ListItemText primary="PieCharts" />
         </ListItem>
+        <ListItem button onClick={() => setView('profile')} selected={view === 'profile'}>
+          <ListItemText primary="Profile" />
+        </ListItem>
       </List>
     </Drawer>
   );

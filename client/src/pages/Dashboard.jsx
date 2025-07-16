@@ -8,6 +8,7 @@ import CampaignSidebar from '../components/CampaignSidebar';
 import { Typography, Box, CssBaseline, IconButton, Divider } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import '../styles/BarChart.css';
+import Profile from '../components/Profile';
 
 export default function Dashboard() {
   const [selectedCampaign, setSelectedCampaign] = useState('');
@@ -87,6 +88,7 @@ export default function Dashboard() {
         {view === 'pdf' && <Typography variant="h6">PDF Export (component placeholder)</Typography>}
         {view === 'future' && <Typography variant="h6">Future Graphs (component placeholder)</Typography>}
         {view === 'piecharts' && <Typography variant="h6">PieCharts (component placeholder)</Typography>}
+        {view === 'profile' && <Profile />}
       </Box>
     </Box>
   );
