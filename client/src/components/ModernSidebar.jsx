@@ -46,13 +46,7 @@ export default function ModernSidebar({ view, setView }) {
             button
             key={item.text}
             selected={view === item.view}
-            onClick={() => {
-              if (item.view === "profile") {
-                // setView(item.view); // This line is removed as per the edit hint
-              } else {
-                setView(item.view);
-              }
-            }}
+            onClick={() => setView(item.view)}
             sx={{
               borderRadius: 2.5,
               margin: '10px 12px',
