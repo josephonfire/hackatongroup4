@@ -1,0 +1,22 @@
+[
+    {
+        "platform": "Instagram",
+        "campaign": "Summer Sale",
+        "clicks": 1000,
+        "impressions": 10000,
+        "conversions": 100,
+        "cost": 1000,
+        "revenue": 10000,
+        "date": "24-06-2025"
+    },
+    {
+        "platform": "Facebook",
+        "campaign": "Summer Sale",
+        "clicks": 1000,
+        "impressions": 10000,
+        "conversions": 100,
+        "cost": 1000,
+        "revenue": 10000,
+        "date": "24-06-2025"
+    }
+]
