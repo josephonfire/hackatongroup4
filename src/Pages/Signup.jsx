@@ -1,4 +1,7 @@
 import Signup from "./components/Signup";
+import { Footer } from "./Components/Footer";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom"; 
 
 
 function SignUpPage() {
@@ -8,8 +11,8 @@ function SignUpPage() {
         <Signup /> <br />
 
       </div>
-      <footer className=" text-gray-500 text-sm text-center pb-6">
-        © {new Date().getFullYear()} ROI Tracker created by Group 4 - Bytes4Future
+      <footer className="text-sm text-center">
+        <Footer />
       </footer>
     </>
   );

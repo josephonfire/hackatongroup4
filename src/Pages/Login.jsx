@@ -1,6 +1,7 @@
-import Login from "../components/Login Form/Login";
+import Login from "../Components/Login";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { Footer } from "../Components/Footer";
 
 
 // Pagina do login do site. 
@@ -29,7 +30,7 @@ function LoginPage() {
       </div>
 
 
-      <footer className="text-gray-500 text-sm text-center">
+      <footer className="text-sm text-center">
         <Footer />
       </footer>
     
