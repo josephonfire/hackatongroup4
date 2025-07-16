@@ -1,0 +1,82 @@
+[
+  {
+    "platform": "Instagram",
+    "campaign": "Summer Sale",
+    "clicks": 1200,
+    "impressions": 15000,
+    "conversions": 110,
+    "cost": 1300,
+    "revenue": 9500,
+    "date": "2025-06-01"
+  },
+  {
+    "platform": "Instagram",
+    "campaign": "Back to School",
+    "clicks": 900,
+    "impressions": 12000,
+    "conversions": 80,
+    "cost": 1100,
+    "revenue": 7000,
+    "date": "2025-07-01"
+  },
+  {
+    "platform": "Facebook",
+    "campaign": "Summer Sale",
+    "clicks": 1000,
+    "impressions": 14000,
+    "conversions": 95,
+    "cost": 1200,
+    "revenue": 9000,
+    "date": "2025-06-01"
+  },
+  {
+    "platform": "Facebook",
+    "campaign": "Back to School",
+    "clicks": 800,
+    "impressions": 11000,
+    "conversions": 70,
+    "cost": 900,
+    "revenue": 6000,
+    "date": "2025-07-01"
+  },
+  {
+    "platform": "Google Ads",
+    "campaign": "Summer Sale",
+    "clicks": 1500,
+    "impressions": 20000,
+    "conversions": 130,
+    "cost": 2000,
+    "revenue": 12000,
+    "date": "2025-06-01"
+  },
+  {
+    "platform": "Google Ads",
+    "campaign": "Back to School",
+    "clicks": 1100,
+    "impressions": 16000,
+    "conversions": 100,
+    "cost": 1500,
+    "revenue": 9000,
+    "date": "2025-07-01"
+  },
+  {
+    "platform": "LinkedIn",
+    "campaign": "Summer Sale",
+    "clicks": 400,
+    "impressions": 5000,
+    "conversions": 30,
+    "cost": 700,
+    "revenue": 4000,
+    "date": "2025-06-01"
+  },
+  {
+    "platform": "LinkedIn",
+    "campaign": "Back to School",
+    "clicks": 350,
+    "impressions": 4500,
+    "conversions": 25,
+    "cost": 600,
+    "revenue": 3500,
+    "date": "2025-07-01"
+  }
+]
