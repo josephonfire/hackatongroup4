@@ -4,18 +4,12 @@ import Signup from "./components/Signup";
 function SignUpPage() {
   return (
     <>
-      <header><NavBarHome /></header>
-
-      <div className=" text-center">
-                  {/* LOGOTIPO*/}
-                  <LogoWithGlow /></div>
-
       <div className="App">
         <Signup /> <br />
 
       </div>
       <footer className=" text-gray-500 text-sm text-center pb-6">
-        © {new Date().getFullYear()} Magic Deck Builder created by Group 5 - Bytes4Future
+        © {new Date().getFullYear()} ROI Tracker created by Group 4 - Bytes4Future
       </footer>
     </>
   );
