@@ -1,0 +1,148 @@
+/* Sidebar fixa para desktop */
+.campaign-sidebar-desktop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: #23263a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+  transition: background 0.3s, color 0.3s;
+}
+.campaign-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 24px;
+  border-bottom: 1px solid #31344d;
+}
+.campaign-sidebar-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
+}
+.campaign-sidebar-theme-btn {
+  border: none;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.2s;
+}
+.campaign-sidebar-theme-btn:hover {
+  background: rgba(255,255,255,0.18);
+}
+.campaign-sidebar-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 16px 0 16px;
+}
+.campaign-sidebar-btn {
+  width: 100%;
+  text-align: left;
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-weight: 500;
+  font-size: 1rem;
+  border: 1.5px solid #fff2;
+  background: #222e3c;
+  color: #fff;
+  margin-bottom: 4px;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+}
+.campaign-sidebar-btn.selected {
+  background: #2d3950;
+  border: 2px solid #fff;
+}
+.campaign-sidebar-btn:hover {
+  background: #2d3950;
+  border-color: #fff4;
+}
+.campaign-sidebar-nav {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Mobile overlay/modal */
+.campaign-sidebar-mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 16px;
+  border-bottom: 1px solid #31344d;
+  background: #23263a;
+}
+.campaign-sidebar-mobile-menu-btn {
+  border: none;
+  background: #23263a;
+  border-radius: 8px;
+  padding: 8px;
+  color: #fff;
+  cursor: pointer;
+}
+.campaign-sidebar-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: flex-start;
+}
+.campaign-sidebar-modal {
+  width: 80vw;
+  max-width: 320px;
+  height: 100vh;
+  background: #23263a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.12);
+  animation: slideInSidebar 0.3s;
+}
+@keyframes slideInSidebar {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.campaign-sidebar-modal-close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsividade */
+@media (min-width: 1024px) {
+  .campaign-sidebar-mobile-header,
+  .campaign-sidebar-modal-overlay {
+    display: none !important;
+  }
+  .campaign-sidebar-desktop {
+    display: flex !important;
+  }
+}
+@media (max-width: 1023px) {
+  .campaign-sidebar-desktop {
+    display: none !important;
+  }
+  .campaign-sidebar-mobile-header {
+    display: flex !important;
+  }
+}
