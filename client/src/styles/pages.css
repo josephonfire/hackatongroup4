@@ -69,3 +69,11 @@ h6,
     padding: 1rem 0.5rem;
   }
 }
+
+button, .MuiButton-root {
+  cursor: pointer;
+}
+
+.MuiListItem-root, .campaign-sidebar-btn {
+  cursor: pointer;
+}
