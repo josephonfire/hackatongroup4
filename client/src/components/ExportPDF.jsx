@@ -65,11 +65,7 @@ const ExportPDF = ({ exportRef, fileName = 'dashboard.pdf', customButton }) => {
     });
   }
 
-  return (
-    <button onClick={handleDownload} className="export-pdf-btn">
-      Download PDF
-    </button>
-  );
+  return null;
 };
 
 export default ExportPDF;
