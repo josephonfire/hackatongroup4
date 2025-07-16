@@ -107,299 +107,337 @@ export default function Dashboard() {
       <CssBaseline />
       <Box sx={{ display: 'flex' }}>
         <ModernSidebar view={view} setView={setView} />
-        <Box component="main" sx={{ flexGrow: 1, p: 3, color: pageText }}>
-          {/* Export PDF Button */}
-          <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
-            <ExportPDF exportRef={dashboardRef} fileName="dashboard.pdf" />
-          </Box>
-          {/* Banner */}
-          <Box className="dashboard-container" style={{ background: 'transparent' }} ref={dashboardRef}>
-            {/* Cards */}
-            <Box sx={{ display: 'flex', gap: 5, flexWrap: 'wrap', mb: 4, width: '100%' }}>
-              <Box sx={{ flex: '1 1 0', minWidth: 220, maxWidth: 350, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div style={{
-                  fontFamily: 'Inter, Roboto, Arial, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '1.15rem',
-                  color: whiteBg ? '#23263a' : '#fff',
-                  marginBottom: 4,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
-                  letterSpacing: 0.2
-                }}>
-                  Potential growth
-                  <span style={{
-                    display: 'inline-block',
-                    width: 7,
-                    height: 7,
-                    borderRadius: '50%',
-                    background: whiteBg ? '#5edc1f' : '#5edc1f',
-                    marginLeft: 6
-                  }} />
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: '#5edc1f' }}>$12.34</span>
-                  <span className="card-growth positive">+3.5%</span>
-                  <span
-                    style={{
-                      marginLeft: 16,
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: 36,
-                      height: 36,
-                      borderRadius: 8,
-                      background: 'rgba(94,220,31,0.08)',
-                      border: '2px solid #5edc1f',
-                      color: '#5edc1f',
-                      fontWeight: 'bold',
-                      fontSize: 22,
-                      lineHeight: '36px',
-                      textAlign: 'center',
-                      padding: 0,
-                    }}
-                  >
-                    ↑
-                  </span>
-                </div>
+        <Box component="main" sx={{ flexGrow: 1, p: { xs: 1, md: 2 }, color: pageText, minHeight: '100vh', maxHeight: 'none', overflow: 'visible' }}>
+          {view === "dashboard" && (
+            <>
+              {/* Export PDF Button */}
+              <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
+                <ExportPDF exportRef={dashboardRef} fileName="dashboard.pdf" />
               </Box>
-              <Box sx={{ flex: '1 1 0', minWidth: 220, maxWidth: 350, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div style={{
-                  fontFamily: 'Inter, Roboto, Arial, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '1.15rem',
-                  color: whiteBg ? '#23263a' : '#fff',
-                  marginBottom: 4,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
-                  letterSpacing: 0.2
-                }}>
-                  Revenue current
-                  <span style={{
-                    display: 'inline-block',
-                    width: 7,
-                    height: 7,
-                    borderRadius: '50%',
-                    background: whiteBg ? '#5edc1f' : '#5edc1f',
-                    marginLeft: 6
-                  }} />
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: '#5edc1f' }}>$17.34</span>
-                  <span className="card-growth positive">+11%</span>
-                  <span
-                    style={{
-                      marginLeft: 16,
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: 36,
-                      height: 36,
-                      borderRadius: 8,
-                      background: 'rgba(94,220,31,0.08)',
-                      border: '2px solid #5edc1f',
-                      color: '#5edc1f',
-                      fontWeight: 'bold',
-                      fontSize: 22,
-                      lineHeight: '36px',
-                      textAlign: 'center',
-                      padding: 0,
-                    }}
-                  >
-                    ↑
-                  </span>
-                </div>
-              </Box>
-              <Box sx={{ flex: '1 1 0', minWidth: 220, maxWidth: 350, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div style={{
-                  fontFamily: 'Inter, Roboto, Arial, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '1.15rem',
-                  color: whiteBg ? '#23263a' : '#fff',
-                  marginBottom: 4,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
-                  letterSpacing: 0.2
-                }}>
-                  Daily Income
-                  <span style={{
-                    display: 'inline-block',
-                    width: 7,
-                    height: 7,
-                    borderRadius: '50%',
-                    background: whiteBg ? '#5edc1f' : '#5edc1f',
-                    marginLeft: 6
-                  }} />
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: '#d32f2f' }}>$12.34</span>
-                  <span className="card-growth negative">-2.4%</span>
-                  <span
-                    style={{
-                      marginLeft: 16,
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: 36,
-                      height: 36,
-                      borderRadius: 8,
-                      background: 'rgba(211,47,47,0.08)',
-                      border: '2px solid #d32f2f',
-                      color: '#d32f2f',
-                      fontWeight: 'bold',
-                      fontSize: 22,
-                      lineHeight: '36px',
-                      textAlign: 'center',
-                      padding: 0,
-                    }}
-                  >
-                    ↓
-                  </span>
-                </div>
-              </Box>
-              <Box sx={{ flex: '1 1 0', minWidth: 220, maxWidth: 350, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-                <div style={{
-                  fontFamily: 'Inter, Roboto, Arial, sans-serif',
-                  fontWeight: 600,
-                  fontSize: '1.15rem',
-                  color: whiteBg ? '#23263a' : '#fff',
-                  marginBottom: 4,
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
-                  letterSpacing: 0.2
-                }}>
-                  Expense current
-                  <span style={{
-                    display: 'inline-block',
-                    width: 7,
-                    height: 7,
-                    borderRadius: '50%',
-                    background: whiteBg ? '#5edc1f' : '#5edc1f',
-                    marginLeft: 6
-                  }} />
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                  <span style={{ color: '#5edc1f' }}>$31.53</span>
-                  <span className="card-growth positive">+3.5%</span>
-                  <span
-                    style={{
-                      marginLeft: 16,
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      width: 36,
-                      height: 36,
-                      borderRadius: 8,
-                      background: 'rgba(94,220,31,0.08)',
-                      border: '2px solid #5edc1f',
-                      color: '#5edc1f',
-                      fontWeight: 'bold',
-                      fontSize: 22,
-                      lineHeight: '36px',
-                      textAlign: 'center',
-                      padding: 0,
-                    }}
-                  >
-                    ↑
-                  </span>
-                </div>
-              </Box>
-            </Box>
-            {/* Duas divs lado a lado */}
-            <Box sx={{ display: 'flex', gap: 3, mt: 3, mb: 6, minHeight: 320 }}>
-              {/* Esquerda: 33% */}
-              <Box sx={{ flex: '1 1 33%', background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: 3, minWidth: 220, color: cardText }}>
-                <Typography variant="h6" sx={{ mb: 2, color: cardText, fontWeight: 600 }}>Distribuição de Plataformas</Typography>
-                <PieChartComponent data={pieData} />
-              </Box>
-              {/* Direita: 66% */}
-              <Box sx={{ flex: '2 1 66%', background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: 3, minWidth: 320, color: cardText }}>
-                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2, gap: 2 }}>
-                  <Typography variant="h6" sx={{ color: cardText, fontWeight: 600 }}>Open Campaigns</Typography>
-                  <Button
-                    onClick={handleAddCampaign}
-                    sx={{
-                      borderRadius: 3,
-                      background: 'linear-gradient(90deg, #5edc1f 0%, #3bbf1f 100%)',
-                      color: '#181a20',
-                      border: 'none',
-                      fontWeight: 700,
-                      fontSize: 16,
-                      letterSpacing: 0.5,
-                      px: 3,
-                      py: 1.2,
-                      minHeight: 44,
-                      boxShadow: '0 4px 16px 0 rgba(94,220,31,0.15)',
-                      textTransform: 'none',
+              {/* Banner */}
+              <Box className="dashboard-container" style={{ background: 'transparent' }} ref={dashboardRef}>
+                {/* Cards */}
+                <Box sx={{ display: 'flex', gap: { xs: 1, md: 2 }, flexWrap: 'wrap', mb: 2, width: '100%', justifyContent: 'space-between' }}>
+                  <Box sx={{ flex: '1 1 0', minWidth: 120, maxWidth: 220, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', maxWidth: '100%' }}>
+                    <div style={{
+                      fontFamily: 'Inter, Roboto, Arial, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '1.15rem',
+                      color: whiteBg ? '#23263a' : '#fff',
+                      marginBottom: 4,
                       display: 'flex',
                       alignItems: 'center',
-                      gap: 1.2,
-                      transition: 'background 0.2s, box-shadow 0.2s, color 0.2s',
-                      '&:hover': {
-                        background: 'linear-gradient(90deg, #3bbf1f 0%, #5edc1f 100%)',
-                        color: '#fff',
-                        boxShadow: '0 6px 20px 0 rgba(94,220,31,0.22)',
-                      },
-                      '&.Mui-selected': {
-                        background: '#23263a !important',
-                        color: '#fff',
-                        boxShadow: '0 2px 12px 0 #0002',
-                      },
-                    }}
-                    startIcon={<AddIcon sx={{ color: '#181a20' }} />}
-                  >
-                    Create Campaign
-                  </Button>
-                  <Menu
-                    id="my-campaigns-menu"
-                    anchorEl={anchorEl}
-                    open={Boolean(anchorEl)}
-                    onClose={handleMenuClose}
-                    MenuListProps={{
-                      sx: { minWidth: 180, p: 0 },
-                    }}
-                    anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-                    transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-                    PaperProps={{
-                      sx: {
-                        borderRadius: 3,
-                        mt: 1,
-                        background: cardBg,
-                        color: cardText,
-                        boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
-                        p: 0,
-                      },
-                    }}
-                  >
-                    {campaigns.map((name) => (
-                      <MenuItem key={name} onClick={() => { setSelectedCampaign(name); handleMenuClose(); }}>
-                        {name}
-                      </MenuItem>
-                    ))}
-                  </Menu>
+                      gap: 6,
+                      textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
+                      letterSpacing: 0.2
+                    }}>
+                      Potential growth
+                      <span style={{
+                        display: 'inline-block',
+                        width: 7,
+                        height: 7,
+                        borderRadius: '50%',
+                        background: whiteBg ? '#5edc1f' : '#5edc1f',
+                        marginLeft: 6
+                      }} />
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <span style={{ color: '#5edc1f' }}>$12.34</span>
+                      <span className="card-growth positive">+3.5%</span>
+                      <span
+                        style={{
+                          marginLeft: 16,
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: 36,
+                          height: 36,
+                          borderRadius: 8,
+                          background: 'rgba(94,220,31,0.08)',
+                          border: '2px solid #5edc1f',
+                          color: '#5edc1f',
+                          fontWeight: 'bold',
+                          fontSize: 22,
+                          lineHeight: '36px',
+                          textAlign: 'center',
+                          padding: 0,
+                        }}
+                      >
+                        ↑
+                      </span>
+                    </div>
+                  </Box>
+                  <Box sx={{ flex: '1 1 0', minWidth: 120, maxWidth: 220, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', maxWidth: '100%' }}>
+                    <div style={{
+                      fontFamily: 'Inter, Roboto, Arial, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '1.15rem',
+                      color: whiteBg ? '#23263a' : '#fff',
+                      marginBottom: 4,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
+                      letterSpacing: 0.2
+                    }}>
+                      Revenue current
+                      <span style={{
+                        display: 'inline-block',
+                        width: 7,
+                        height: 7,
+                        borderRadius: '50%',
+                        background: whiteBg ? '#5edc1f' : '#5edc1f',
+                        marginLeft: 6
+                      }} />
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <span style={{ color: '#5edc1f' }}>$17.34</span>
+                      <span className="card-growth positive">+11%</span>
+                      <span
+                        style={{
+                          marginLeft: 16,
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: 36,
+                          height: 36,
+                          borderRadius: 8,
+                          background: 'rgba(94,220,31,0.08)',
+                          border: '2px solid #5edc1f',
+                          color: '#5edc1f',
+                          fontWeight: 'bold',
+                          fontSize: 22,
+                          lineHeight: '36px',
+                          textAlign: 'center',
+                          padding: 0,
+                        }}
+                      >
+                        ↑
+                      </span>
+                    </div>
+                  </Box>
+                  <Box sx={{ flex: '1 1 0', minWidth: 120, maxWidth: 220, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', maxWidth: '100%' }}>
+                    <div style={{
+                      fontFamily: 'Inter, Roboto, Arial, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '1.15rem',
+                      color: whiteBg ? '#23263a' : '#fff',
+                      marginBottom: 4,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
+                      letterSpacing: 0.2
+                    }}>
+                      Daily Income
+                      <span style={{
+                        display: 'inline-block',
+                        width: 7,
+                        height: 7,
+                        borderRadius: '50%',
+                        background: whiteBg ? '#5edc1f' : '#5edc1f',
+                        marginLeft: 6
+                      }} />
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <span style={{ color: '#d32f2f' }}>$12.34</span>
+                      <span className="card-growth negative">-2.4%</span>
+                      <span
+                        style={{
+                          marginLeft: 16,
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: 36,
+                          height: 36,
+                          borderRadius: 8,
+                          background: 'rgba(211,47,47,0.08)',
+                          border: '2px solid #d32f2f',
+                          color: '#d32f2f',
+                          fontWeight: 'bold',
+                          fontSize: 22,
+                          lineHeight: '36px',
+                          textAlign: 'center',
+                          padding: 0,
+                        }}
+                      >
+                        ↓
+                      </span>
+                    </div>
+                  </Box>
+                  <Box sx={{ flex: '1 1 0', minWidth: 120, maxWidth: 220, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', maxWidth: '100%' }}>
+                    <div style={{
+                      fontFamily: 'Inter, Roboto, Arial, sans-serif',
+                      fontWeight: 600,
+                      fontSize: '1.15rem',
+                      color: whiteBg ? '#23263a' : '#fff',
+                      marginBottom: 4,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 6,
+                      textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
+                      letterSpacing: 0.2
+                    }}>
+                      Expense current
+                      <span style={{
+                        display: 'inline-block',
+                        width: 7,
+                        height: 7,
+                        borderRadius: '50%',
+                        background: whiteBg ? '#5edc1f' : '#5edc1f',
+                        marginLeft: 6
+                      }} />
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center' }}>
+                      <span style={{ color: '#5edc1f' }}>$31.53</span>
+                      <span className="card-growth positive">+3.5%</span>
+                      <span
+                        style={{
+                          marginLeft: 16,
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          width: 36,
+                          height: 36,
+                          borderRadius: 8,
+                          background: 'rgba(94,220,31,0.08)',
+                          border: '2px solid #5edc1f',
+                          color: '#5edc1f',
+                          fontWeight: 'bold',
+                          fontSize: 22,
+                          lineHeight: '36px',
+                          textAlign: 'center',
+                          padding: 0,
+                        }}
+                      >
+                        ↑
+                      </span>
+                    </div>
+                  </Box>
                 </Box>
-                {/* Adicione aqui o conteúdo desejado */}
+                {/* PieChart e Open Campaigns lado a lado, compactos */}
+                <Box sx={{
+                  display: 'flex',
+                  flexDirection: { xs: 'column', md: 'row' },
+                  gap: { xs: 1, md: 2 },
+                  mt: 1,
+                  mb: 2,
+                  minHeight: 180,
+                  width: '100%',
+                  maxWidth: '100%',
+                }}>
+                  <Box sx={{
+                    width: { xs: '100%', md: '40%' },
+                    minWidth: { xs: '100%', md: 120 },
+                    maxWidth: { xs: '100%', md: '45%' },
+                    background: cardBg,
+                    borderRadius: 3,
+                    boxShadow: cardShadow,
+                    p: { xs: 1, md: 2 },
+                    color: cardText,
+                    mb: { xs: 1, md: 0 },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    <Typography variant="h6" sx={{ mb: 1, color: cardText, fontWeight: 600, textAlign: 'center', fontSize: 16 }}>Distribuição de Plataformas</Typography>
+                    <PieChartComponent data={pieData} />
+                  </Box>
+                  <Box sx={{
+                    flex: 1,
+                    minWidth: 0,
+                    background: cardBg,
+                    borderRadius: 3,
+                    boxShadow: cardShadow,
+                    p: { xs: 1, md: 2 },
+                    color: cardText,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-start',
+                  }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1, gap: 1 }}>
+                      <Typography variant="h6" sx={{ color: cardText, fontWeight: 600, fontSize: 16 }}>Open Campaigns</Typography>
+                      <Button
+                        onClick={handleAddCampaign}
+                        sx={{
+                          borderRadius: 3,
+                          background: 'linear-gradient(90deg, #5edc1f 0%, #3bbf1f 100%)',
+                          color: '#181a20',
+                          border: 'none',
+                          fontWeight: 700,
+                          fontSize: 16,
+                          letterSpacing: 0.5,
+                          px: 3,
+                          py: 1.2,
+                          minHeight: 44,
+                          boxShadow: '0 4px 16px 0 rgba(94,220,31,0.15)',
+                          textTransform: 'none',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: 1.2,
+                          transition: 'background 0.2s, box-shadow 0.2s, color 0.2s',
+                          '&:hover': {
+                            background: 'linear-gradient(90deg, #3bbf1f 0%, #5edc1f 100%)',
+                            color: '#fff',
+                            boxShadow: '0 6px 20px 0 rgba(94,220,31,0.22)',
+                          },
+                          '&.Mui-selected': {
+                            background: '#23263a !important',
+                            color: '#fff',
+                            boxShadow: '0 2px 12px 0 #0002',
+                          },
+                        }}
+                        startIcon={<AddIcon sx={{ color: '#181a20' }} />}
+                      >
+                        Create Campaign
+                      </Button>
+                      <Menu
+                        id="my-campaigns-menu"
+                        anchorEl={anchorEl}
+                        open={Boolean(anchorEl)}
+                        onClose={handleMenuClose}
+                        MenuListProps={{
+                          sx: { minWidth: 180, p: 0 },
+                        }}
+                        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+                        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+                        PaperProps={{
+                          sx: {
+                            borderRadius: 3,
+                            mt: 1,
+                            background: cardBg,
+                            color: cardText,
+                            boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
+                            p: 0,
+                          },
+                        }}
+                      >
+                        {campaigns.map((name) => (
+                          <MenuItem key={name} onClick={() => { setSelectedCampaign(name); handleMenuClose(); }}>
+                            {name}
+                          </MenuItem>
+                        ))}
+                      </Menu>
+                    </Box>
+                    {/* Adicione aqui o conteúdo desejado */}
+                  </Box>
+                </Box>
+                {/* Gráfico de linhas compacto */}
+                <Box sx={{ background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: { xs: 2, md: 3 }, mb: 2, color: cardText, width: '100%', maxWidth: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <Typography variant="h6" sx={{ mb: 2, color: cardText, fontWeight: 700, fontSize: 17, letterSpacing: 0.2, textAlign: 'center' }}>
+                    Progresso da Season por Plataforma
+                  </Typography>
+                  <Box sx={{ height: { xs: 180, md: 240 }, width: '95%', maxWidth: '95%', mx: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <ModernLineChart data={seasonData} whiteBg={whiteBg} />
+                  </Box>
+                  <Box sx={{ mt: 2, p: 1.5, background: whiteBg ? '#e8f5e9' : '#23263a', borderRadius: 2, color: cardText, fontWeight: 500, fontSize: 14, textAlign: 'center', width: '95%', maxWidth: '95%', mx: 'auto' }}>
+                    Dica: A plataforma mais rentável nesta season foi <span style={{ color: '#5edc1f', fontWeight: 700 }}>{mostProfitablePlatform}</span>!
+                  </Box>
+                </Box>
               </Box>
-            </Box>
-            {/* Gráfico de progresso da season */}
-            <Box sx={{ background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: 3, mb: 4, color: cardText }}>
-              <Typography variant="h6" sx={{ mb: 2, color: cardText, fontWeight: 700, fontSize: '1.18rem', letterSpacing: 0.2 }}>Progresso da Season por Plataforma</Typography>
-              <ModernLineChart data={seasonData} whiteBg={whiteBg} />
-              <Box sx={{ mt: 2, p: 2, background: whiteBg ? '#e8f5e9' : '#23263a', borderRadius: 2, color: cardText, fontWeight: 500, fontSize: 15 }}>
-                Dica: A plataforma mais rentável nesta season foi <span style={{ color: '#5edc1f', fontWeight: 700 }}>{mostProfitablePlatform}</span>!
-              </Box>
-            </Box>
-          </Box>
-
-          {view === "dashboard" && <></>}
+            </>
+          )}
           {view === "profile" && <Profile />}
           {view === "pdf" && (
             <Typography variant="h6">
@@ -414,7 +452,7 @@ export default function Dashboard() {
           {view === "piecharts" && (
             <Typography variant="h6">
               PieCharts (component placeholder)
-              </Typography>
+            </Typography>
           )}
         </Box>
       </Box>
