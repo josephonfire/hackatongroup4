@@ -1,6 +1,5 @@
-import Signup from "../components/Signup";
-import NavBarHome from "../components/NavBarHome";
-import LogoWithGlow from "../components/logowithGlow";
+import Signup from "./components/Signup";
+
 
 function SignUpPage() {
   return (
