@@ -22,6 +22,7 @@ import "../styles/Dashboard.css";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import AddIcon from '@mui/icons-material/Add';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 export default function Dashboard() {
   const [selectedCampaign, setSelectedCampaign] = useState("");
@@ -117,10 +118,6 @@ export default function Dashboard() {
         <MenuIcon />
       </IconButton>
       <Box component="main" sx={{ flexGrow: 1, p: 3, color: pageText }}>
-        {/* Export PDF Button */}
-        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
-          <ExportPDF exportRef={dashboardRef} fileName="dashboard.pdf" />
-        </Box>
         {/* Banner */}
         <Box className="dashboard-container" style={{ background: 'transparent' }} ref={dashboardRef}>
           {/* Cards */}
@@ -340,6 +337,16 @@ export default function Dashboard() {
             </Typography>
         )}
       </Box>
+      {/* Floating PDF Export Button - moved outside main content for correct positioning */}
+      <ExportPDF
+        exportRef={dashboardRef}
+        fileName="dashboard.pdf"
+        customButton={
+          <button className="export-pdf-fab" title="Download PDF">
+            <PictureAsPdfIcon style={{ width: 32, height: 32 }} />
+          </button>
+        }
+      />
     </Box>
   );
 }
