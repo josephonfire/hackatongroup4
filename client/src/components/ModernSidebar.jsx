@@ -28,7 +28,7 @@ export default function ModernSidebar({ view, setView }) {
         '& .MuiDrawer-paper': {
           width: open ? 220 : 64,
           boxSizing: 'border-box',
-          background: '#23263a !important', // força a cor
+          background: '#151623 !important', // igual ao das boxes
           color: '#e0e0e0',
           borderRight: 'none',
           transition: 'width 0.2s',
