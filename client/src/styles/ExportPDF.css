@@ -1,0 +1,24 @@
+.export-pdf-fab {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1500;
+  width: 56px;
+  height: 56px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0;
+}
+
+.export-pdf-fab:hover {
+  background: #b71c1c;
+}

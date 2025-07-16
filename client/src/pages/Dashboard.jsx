@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import SummaryCards from "../components/SummaryCards";
 import BarChartComponent from "../components/BarChart";
 import PieChartComponent from "../components/PieChart";
@@ -14,6 +14,14 @@ import {
   Menu,
   MenuItem,
   Fab,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+  TextField,
+  Select,
+  InputLabel,
+  FormControl,
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import "../styles/BarChart.css";
@@ -22,6 +30,7 @@ import "../styles/Dashboard.css";
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import AddIcon from '@mui/icons-material/Add';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 export default function Dashboard() {
   const [selectedCampaign, setSelectedCampaign] = useState("");
@@ -30,6 +39,11 @@ export default function Dashboard() {
   const [whiteBg, setWhiteBg] = useState(false);
   const [view, setView] = useState("dashboard");
   const [anchorEl, setAnchorEl] = useState(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [campaignName, setCampaignName] = useState("");
+  const [platform, setPlatform] = useState("");
+  const [investment, setInvestment] = useState("");
+  const dashboardRef = useRef();
 
   // Botão evento para abrir o menu de campanhas
   const handleMenuOpen = (event) => {
@@ -41,9 +55,21 @@ export default function Dashboard() {
   };
   // Botão evento para adicionar campanha
   const handleAddCampaign = () => {
-    // lógica para adicionar campanha
-    alert('Adicionar nova campanha!');
+    setDialogOpen(true);
     setAnchorEl(null);
+  };
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+    setCampaignName("");
+    setPlatform("");
+    setInvestment("");
+  };
+  const handleDialogSave = () => {
+    // Aqui você pode adicionar a lógica para salvar a campanha
+    setDialogOpen(false);
+    setCampaignName("");
+    setPlatform("");
+    setInvestment("");
   };
 
   const pageBg = whiteBg ? '#f5f6fa' : '#181a20';
@@ -107,7 +133,7 @@ export default function Dashboard() {
           position: "fixed",
           top: 24,
           left: sidebarOpen ? 250 : 24,
-          zIndex: 1300,
+          zIndex: 100,
           background: "#fdfdfd",
           boxShadow: "0 2px 8px rgba(0,0,0,0.12)",
           transition: "left 0.3s",
@@ -117,11 +143,32 @@ export default function Dashboard() {
       </IconButton>
       <Box component="main" sx={{ flexGrow: 1, p: 3, color: pageText }}>
         {/* Banner */}
-        <Box className="dashboard-container" style={{ background: 'transparent' }}>
+        <Box className="dashboard-container" style={{ background: 'transparent' }} ref={dashboardRef}>
           {/* Cards */}
           <Box className="dashboard-cards">
             <Box className="dashboard-card" style={{ background: cardBg, color: cardText, boxShadow: cardShadow }}>
-              <div className="card-title">Potential growth</div>
+              <div className="card-title" style={{
+                fontFamily: 'Inter, Roboto, Arial, sans-serif',
+                fontWeight: 600,
+                fontSize: '1.15rem',
+                color: whiteBg ? '#23263a' : '#fff',
+                marginBottom: 4,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
+                letterSpacing: 0.2
+              }}>
+                Potential growth
+                <span style={{
+                  display: 'inline-block',
+                  width: 7,
+                  height: 7,
+                  borderRadius: '50%',
+                  background: whiteBg ? '#5edc1f' : '#5edc1f',
+                  marginLeft: 6
+                }} />
+              </div>
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span className="card-value" style={{ color: '#5edc1f' }}>$12.34</span>
                 <span className="card-growth positive">+3.5%</span>
@@ -150,7 +197,28 @@ export default function Dashboard() {
               </div>
             </Box>
             <Box className="dashboard-card" style={{ background: cardBg, color: cardText, boxShadow: cardShadow }}>
-              <div className="card-title">Revenue current</div>
+              <div className="card-title" style={{
+                fontFamily: 'Inter, Roboto, Arial, sans-serif',
+                fontWeight: 600,
+                fontSize: '1.15rem',
+                color: whiteBg ? '#23263a' : '#fff',
+                marginBottom: 4,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
+                letterSpacing: 0.2
+              }}>
+                Revenue current
+                <span style={{
+                  display: 'inline-block',
+                  width: 7,
+                  height: 7,
+                  borderRadius: '50%',
+                  background: whiteBg ? '#5edc1f' : '#5edc1f',
+                  marginLeft: 6
+                }} />
+              </div>
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span className="card-value" style={{ color: '#5edc1f' }}>$17.34</span>
                 <span className="card-growth positive">+11%</span>
@@ -179,7 +247,28 @@ export default function Dashboard() {
               </div>
             </Box>
             <Box className="dashboard-card" style={{ background: cardBg, color: cardText, boxShadow: cardShadow }}>
-              <div className="card-title">Daily Income</div>
+              <div className="card-title" style={{
+                fontFamily: 'Inter, Roboto, Arial, sans-serif',
+                fontWeight: 600,
+                fontSize: '1.15rem',
+                color: whiteBg ? '#23263a' : '#fff',
+                marginBottom: 4,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
+                letterSpacing: 0.2
+              }}>
+                Daily Income
+                <span style={{
+                  display: 'inline-block',
+                  width: 7,
+                  height: 7,
+                  borderRadius: '50%',
+                  background: whiteBg ? '#5edc1f' : '#5edc1f',
+                  marginLeft: 6
+                }} />
+              </div>
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span className="card-value" style={{ color: '#d32f2f' }}>$12.34</span>
                 <span className="card-growth negative">-2.4%</span>
@@ -208,7 +297,28 @@ export default function Dashboard() {
               </div>
             </Box>
             <Box className="dashboard-card" style={{ background: cardBg, color: cardText, boxShadow: cardShadow }}>
-              <div className="card-title">Expense current</div>
+              <div className="card-title" style={{
+                fontFamily: 'Inter, Roboto, Arial, sans-serif',
+                fontWeight: 600,
+                fontSize: '1.15rem',
+                color: whiteBg ? '#23263a' : '#fff',
+                marginBottom: 4,
+                display: 'flex',
+                alignItems: 'center',
+                gap: 6,
+                textShadow: whiteBg ? 'none' : '0 1px 4px #0006',
+                letterSpacing: 0.2
+              }}>
+                Expense current
+                <span style={{
+                  display: 'inline-block',
+                  width: 7,
+                  height: 7,
+                  borderRadius: '50%',
+                  background: whiteBg ? '#5edc1f' : '#5edc1f',
+                  marginLeft: 6
+                }} />
+              </div>
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <span className="card-value" style={{ color: '#5edc1f' }}>$31.53</span>
                 <span className="card-growth positive">+3.5%</span>
@@ -249,30 +359,32 @@ export default function Dashboard() {
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2, gap: 2 }}>
                 <Typography variant="h6" sx={{ color: cardText, fontWeight: 600 }}>Open Campaigns</Typography>
                 <Button
+                  className="pdf-hide"
                   aria-controls={Boolean(anchorEl) ? 'my-campaigns-menu' : undefined}
                   aria-haspopup="true"
                   onClick={handleMenuOpen}
                   sx={{
-                    borderRadius: 1.5,
-                    background: cardBg,
-                    color: cardText,
-                    border: '1.5px solid #fff2',
-                    fontWeight: 500,
-                    fontSize: 15,
+                    borderRadius: 3,
+                    background: 'linear-gradient(90deg, #5edc1f 0%, #3bbf1f 100%)',
+                    color: '#fff',
+                    border: 'none',
+                    fontWeight: 700,
+                    fontSize: 16,
                     letterSpacing: 0.5,
-                    px: 2,
-                    py: 0.7,
-                    minHeight: 36,
-                    boxShadow: 'none',
+                    px: 3,
+                    py: 1.2,
+                    minHeight: 44,
+                    boxShadow: '0 4px 16px 0 rgba(94,220,31,0.15)',
                     textTransform: 'none',
+                    gap: 1.2,
+                    transition: 'background 0.2s, box-shadow 0.2s, color 0.2s',
                     '&:hover': {
-                      background: whiteBg ? '#f5f6fa' : '#23263a',
-                      borderColor: '#fff4',
+                      background: 'linear-gradient(90deg, #3bbf1f 0%, #5edc1f 100%)',
+                      color: '#fff',
+                      boxShadow: '0 6px 20px 0 rgba(94,220,31,0.22)',
                     },
-                    display: 'flex',
-                    alignItems: 'center',
-                    transition: 'background 0.2s, border 0.2s',
                   }}
+                  startIcon={<AddIcon sx={{ color: '#fff' }} />}
                 >
                 Create Campaign
                 </Button>
@@ -297,19 +409,11 @@ export default function Dashboard() {
                     },
                   }}
                 >
-                  {campaigns.length === 0 && (
-                    <MenuItem disabled sx={{ opacity: 0.7 }}>No campaigns</MenuItem>
-                  )}
                   {campaigns.map((name) => (
                     <MenuItem key={name} onClick={() => { setSelectedCampaign(name); handleMenuClose(); }}>
                       {name}
                     </MenuItem>
                   ))}
-                  <Box sx={{ display: 'flex', justifyContent: 'center', p: 1 }}>
-                    <Fab size="small" color="error" aria-label="add" onClick={handleAddCampaign}>
-                      <AddIcon />
-                    </Fab>
-                  </Box>
                 </Menu>
               </Box>
               {/* Adicione aqui o conteúdo desejado */}
@@ -335,6 +439,62 @@ export default function Dashboard() {
             </Typography>
         )}
       </Box>
+      {/* Dialog para criar campanha */}
+      <Dialog open={dialogOpen} onClose={handleDialogClose}>
+        <DialogTitle>Criar Nova Campanha</DialogTitle>
+        <DialogContent sx={{ minWidth: 340 }}>
+          <TextField
+            autoFocus
+            margin="dense"
+            label="Nome da campanha"
+            type="text"
+            fullWidth
+            variant="outlined"
+            value={campaignName}
+            onChange={e => setCampaignName(e.target.value)}
+            sx={{ mb: 2 }}
+          />
+          <FormControl fullWidth sx={{ mb: 2 }}>
+            <InputLabel id="platform-label">Plataforma</InputLabel>
+            <Select
+              labelId="platform-label"
+              value={platform}
+              label="Plataforma"
+              onChange={e => setPlatform(e.target.value)}
+            >
+              <MenuItem value="Instagram">Instagram</MenuItem>
+              <MenuItem value="Facebook">Facebook</MenuItem>
+              <MenuItem value="TikTok">TikTok</MenuItem>
+              <MenuItem value="LinkedIn">LinkedIn</MenuItem>
+              <MenuItem value="X">X</MenuItem>
+            </Select>
+          </FormControl>
+          <TextField
+            margin="dense"
+            label="Valor de investimento"
+            type="number"
+            fullWidth
+            variant="outlined"
+            value={investment}
+            onChange={e => setInvestment(e.target.value)}
+            inputProps={{ min: 0 }}
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleDialogClose} color="secondary">Cancelar</Button>
+          <Button onClick={handleDialogSave} color="primary" variant="contained">Salvar</Button>
+        </DialogActions>
+      </Dialog>
+      {/* Floating PDF Export Button - moved outside main content for correct positioning */}
+      <ExportPDF
+        exportRef={dashboardRef}
+        fileName="dashboard.pdf"
+        customButton={
+          <button className="export-pdf-fab" title="Download PDF">
+            <PictureAsPdfIcon style={{ width: 32, height: 32 }} />
+          </button>
+        }
+      />
     </Box>
   );
 }
