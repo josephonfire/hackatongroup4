@@ -1,0 +1,98 @@
+.dashboard-container {
+  /* Remova ou ajuste o background para não sobrescrever o fundo do Box */
+  background: transparent;
+  padding: 32px;
+  min-height: 100vh;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.dashboard-banner {
+  background: linear-gradient(90deg, #d32f2f 0%, #ff6f61 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 18px 32px;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-banner p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.dashboard-banner a {
+  background: #fff;
+  color: #d32f2f;
+  border-radius: 20px;
+  padding: 6px 18px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 24px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dashboard-banner a:hover {
+  background: #d32f2f;
+  color: #fff;
+}
+
+.dashboard-cards {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px #0001;
+  padding: 24px 20px;
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-card .card-title {
+  font-size: 1.1rem;
+  color: #888;
+  margin-bottom: 8px;
+}
+
+.dashboard-card .card-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5edc1f;
+}
+
+.dashboard-card .card-growth {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.dashboard-card .card-growth.positive {
+  color: #43a047;
+}
+
+.dashboard-card .card-growth.negative {
+  color: #d32f2f;
+}
+
+.dashboard-card .card-icon {
+  font-size: 2rem;
+  margin-left: auto;
+}
+
+@media (max-width: 900px) {
+  .dashboard-cards {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

@@ -5,6 +5,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import AddIcon from '@mui/icons-material/Add';
 
 const drawerWidth = 240;
+const sidebarBg = '#23263a';
 
 export default function CampaignSidebar({ campaigns, selected, onSelect, onBgToggle, sidebarBg, sidebarText, setView, view, whiteBg }) {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -33,7 +34,7 @@ export default function CampaignSidebar({ campaigns, selected, onSelect, onBgTog
         '& .MuiDrawer-paper': {
           width: drawerWidth,
           boxSizing: 'border-box',
-          background: sidebarBg || '#222e3c',
+          background: sidebarBg,
           color: sidebarText || '#fff',
           transition: 'background 0.3s, color 0.3s',
         },
@@ -188,7 +189,7 @@ export default function CampaignSidebar({ campaigns, selected, onSelect, onBgTog
               sx: {
                 borderRadius: 3,
                 mt: 1,
-                background: sidebarBg || '#222e3c',
+                background: sidebarBg, // <-- só sidebarBg
                 color: sidebarText || '#fff',
                 boxShadow: '0 2px 8px rgba(0,0,0,0.10)',
                 p: 0,
