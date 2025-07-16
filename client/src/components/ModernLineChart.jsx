@@ -45,18 +45,18 @@ function CustomTooltip({ active, payload, label, whiteBg }) {
 
 export default function ModernLineChart({ data, whiteBg }) {
   return (
-    <ResponsiveContainer width="100%" height={320}>
-      <LineChart data={data} margin={{ top: 16, right: 24, left: 0, bottom: 0 }}>
+    <ResponsiveContainer width="100%" height={180}>
+      <LineChart data={data} margin={{ top: 8, right: 12, left: 0, bottom: 8 }}>
         <CartesianGrid stroke={whiteBg ? '#e0e0e0' : '#333'} strokeDasharray="3 3" vertical={false} />
         <XAxis dataKey="day" tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500 }} />
         <YAxis tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500 }} />
         <Tooltip content={<CustomTooltip whiteBg={whiteBg} />} />
-        <Legend iconType="circle" wrapperStyle={{ paddingTop: 8, color: whiteBg ? '#23263a' : '#fff', fontWeight: 600 }} />
-        <Line type="monotone" dataKey="Instagram" stroke={COLORS.Instagram} strokeWidth={2.5} dot={{ r: 4 }} activeDot={{ r: 7 }} />
-        <Line type="monotone" dataKey="Facebook" stroke={COLORS.Facebook} strokeWidth={2.5} dot={{ r: 4 }} activeDot={{ r: 7 }} />
-        <Line type="monotone" dataKey="TikTok" stroke={COLORS.TikTok} strokeWidth={2.5} dot={{ r: 4 }} activeDot={{ r: 7 }} />
-        <Line type="monotone" dataKey="LinkedIn" stroke={COLORS.LinkedIn} strokeWidth={2.5} dot={{ r: 4 }} activeDot={{ r: 7 }} />
-        <Line type="monotone" dataKey="X" stroke={COLORS.X} strokeWidth={2.5} dot={{ r: 4 }} activeDot={{ r: 7 }} />
+        <Legend iconType="circle" wrapperStyle={{ paddingTop: 4, color: whiteBg ? '#23263a' : '#fff', fontWeight: 600, fontSize: 12 }} />
+        <Line type="monotone" dataKey="Instagram" stroke={COLORS.Instagram} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />
+        <Line type="monotone" dataKey="Facebook" stroke={COLORS.Facebook} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />
+        <Line type="monotone" dataKey="TikTok" stroke={COLORS.TikTok} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />
+        <Line type="monotone" dataKey="LinkedIn" stroke={COLORS.LinkedIn} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />
+        <Line type="monotone" dataKey="X" stroke={COLORS.X} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />
       </LineChart>
     </ResponsiveContainer>
   );

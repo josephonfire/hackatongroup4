@@ -119,10 +119,8 @@ export default function Dashboard() {
       <CssBaseline />
       <Box sx={{ display: 'flex' }}>
         <ModernSidebar view={view} setView={setView} />
-        <Box component="main" sx={{ flexGrow: 1, p: 3, color: pageText }}>
-          {view === "profile" ? (
-            <Profile connectedSocials={connectedSocials} onChange={setConnectedSocials} />
-          ) : (
+        <Box component="main" sx={{ flexGrow: 1, p: { xs: 1, md: 2 }, color: pageText, minHeight: '100vh', maxHeight: 'none', overflow: 'visible' }}>
+          {view === "dashboard" && (
             <>
               {/* Export PDF Button */}
               <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 2 }}>
@@ -131,8 +129,8 @@ export default function Dashboard() {
               {/* Banner */}
               <Box className="dashboard-container" style={{ background: 'transparent' }} ref={dashboardRef}>
                 {/* Cards */}
-                <Box sx={{ display: 'flex', gap: 5, flexWrap: 'wrap', mb: 4, width: '100%' }}>
-                  <Box sx={{ flex: '1 1 0', minWidth: 220, maxWidth: 350, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <Box sx={{ display: 'flex', gap: { xs: 1, md: 2 }, flexWrap: 'wrap', mb: 2, width: '100%', justifyContent: 'space-between' }}>
+                  <Box sx={{ flex: '1 1 0', minWidth: 120, maxWidth: 220, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', maxWidth: '100%' }}>
                     <div style={{
                       fontFamily: 'Inter, Roboto, Arial, sans-serif',
                       fontWeight: 600,
@@ -181,7 +179,7 @@ export default function Dashboard() {
                       </span>
                     </div>
                   </Box>
-                  <Box sx={{ flex: '1 1 0', minWidth: 220, maxWidth: 350, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <Box sx={{ flex: '1 1 0', minWidth: 120, maxWidth: 220, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', maxWidth: '100%' }}>
                     <div style={{
                       fontFamily: 'Inter, Roboto, Arial, sans-serif',
                       fontWeight: 600,
@@ -230,7 +228,7 @@ export default function Dashboard() {
                       </span>
                     </div>
                   </Box>
-                  <Box sx={{ flex: '1 1 0', minWidth: 220, maxWidth: 350, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <Box sx={{ flex: '1 1 0', minWidth: 120, maxWidth: 220, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', maxWidth: '100%' }}>
                     <div style={{
                       fontFamily: 'Inter, Roboto, Arial, sans-serif',
                       fontWeight: 600,
@@ -254,7 +252,7 @@ export default function Dashboard() {
                       }} />
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center' }}>
-                      <span style={{ color: '#FFD600' }}>$12.34</span>
+                      <span style={{ color: '#d32f2f' }}>$12.34</span>
                       <span className="card-growth negative">-2.4%</span>
                       <span
                         style={{
@@ -265,9 +263,9 @@ export default function Dashboard() {
                           width: 36,
                           height: 36,
                           borderRadius: 8,
-                          background: 'rgba(255,214,0,0.08)',
-                          border: '2px solid #FFD600',
-                          color: '#FFD600',
+                          background: 'rgba(211,47,47,0.08)',
+                          border: '2px solid #d32f2f',
+                          color: '#d32f2f',
                           fontWeight: 'bold',
                           fontSize: 22,
                           lineHeight: '36px',
@@ -279,7 +277,7 @@ export default function Dashboard() {
                       </span>
                     </div>
                   </Box>
-                  <Box sx={{ flex: '1 1 0', minWidth: 220, maxWidth: 350, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 2, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                  <Box sx={{ flex: '1 1 0', minWidth: 120, maxWidth: 220, background: cardBg, color: cardText, boxShadow: cardShadow, borderRadius: 3, p: 1, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', width: '100%', maxWidth: '100%' }}>
                     <div style={{
                       fontFamily: 'Inter, Roboto, Arial, sans-serif',
                       fontWeight: 600,
@@ -329,17 +327,49 @@ export default function Dashboard() {
                     </div>
                   </Box>
                 </Box>
-                {/* Two divs side by side */}
-                <Box sx={{ display: 'flex', gap: 3, mt: 3, mb: 6, minHeight: 320 }}>
-                  {/* Left: 33% */}
-                  <Box sx={{ flex: '1 1 33%', background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: 3, minWidth: 220, color: cardText }}>
-                    <Typography variant="h6" sx={{ mb: 2, color: cardText, fontWeight: 600 }}>Platform Distribution</Typography>
-                    <PieChartComponent data={filteredPieData} />
+                {/* PieChart e Open Campaigns lado a lado, compactos */}
+                <Box sx={{
+                  display: 'flex',
+                  flexDirection: { xs: 'column', md: 'row' },
+                  gap: { xs: 1, md: 2 },
+                  mt: 1,
+                  mb: 2,
+                  minHeight: 180,
+                  width: '100%',
+                  maxWidth: '100%',
+                }}>
+                  <Box sx={{
+                    width: { xs: '100%', md: '40%' },
+                    minWidth: { xs: '100%', md: 120 },
+                    maxWidth: { xs: '100%', md: '45%' },
+                    background: cardBg,
+                    borderRadius: 3,
+                    boxShadow: cardShadow,
+                    p: { xs: 1, md: 2 },
+                    color: cardText,
+                    mb: { xs: 1, md: 0 },
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}>
+                    <Typography variant="h6" sx={{ mb: 1, color: cardText, fontWeight: 600, textAlign: 'center', fontSize: 16 }}>Distribuição de Plataformas</Typography>
+                    <PieChartComponent data={pieData} />
                   </Box>
-                  {/* Right: 66% */}
-                  <Box sx={{ flex: '2 1 66%', background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: 3, minWidth: 320, color: cardText }}>
-                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2, gap: 2 }}>
-                      <Typography variant="h6" sx={{ color: cardText, fontWeight: 600 }}>Open Campaigns</Typography>
+                  <Box sx={{
+                    flex: 1,
+                    minWidth: 0,
+                    background: cardBg,
+                    borderRadius: 3,
+                    boxShadow: cardShadow,
+                    p: { xs: 1, md: 2 },
+                    color: cardText,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'flex-start',
+                  }}>
+                    <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 1, gap: 1 }}>
+                      <Typography variant="h6" sx={{ color: cardText, fontWeight: 600, fontSize: 16 }}>Open Campaigns</Typography>
                       <Button
                         onClick={handleAddCampaign}
                         sx={{
@@ -400,37 +430,41 @@ export default function Dashboard() {
                             {name}
                           </MenuItem>
                         ))}
-                        <MenuItem disabled sx={{ opacity: 0.7 }}>No campaigns</MenuItem>
                       </Menu>
                     </Box>
-                    {/* Add your desired content here */}
+                    {/* Adicione aqui o conteúdo desejado */}
                   </Box>
                 </Box>
-                {/* Season progress graph */}
-                <Box sx={{ background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: 3, mb: 4, color: cardText }}>
-                  <Typography variant="h6" sx={{ mb: 2, color: cardText, fontWeight: 700, fontSize: '1.18rem', letterSpacing: 0.2 }}>Season Progress by Platform</Typography>
-                  <ModernLineChart data={filteredSeasonData} whiteBg={whiteBg} />
-                  <Box sx={{ mt: 2, p: 2, background: whiteBg ? '#e8f5e9' : '#23263a', borderRadius: 2, color: cardText, fontWeight: 500, fontSize: 15 }}>
-                    Tip: The most profitable platform in this season was <span style={{ color: '#5edc1f', fontWeight: 700 }}>{mostProfitablePlatform}</span>!
+                {/* Gráfico de linhas compacto */}
+                <Box sx={{ background: cardBg, borderRadius: 3, boxShadow: cardShadow, p: { xs: 2, md: 3 }, mb: 2, color: cardText, width: '100%', maxWidth: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                  <Typography variant="h6" sx={{ mb: 2, color: cardText, fontWeight: 700, fontSize: 17, letterSpacing: 0.2, textAlign: 'center' }}>
+                    Progresso da Season por Plataforma
+                  </Typography>
+                  <Box sx={{ height: { xs: 180, md: 240 }, width: '95%', maxWidth: '95%', mx: 'auto', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    <ModernLineChart data={seasonData} whiteBg={whiteBg} />
+                  </Box>
+                  <Box sx={{ mt: 2, p: 1.5, background: whiteBg ? '#e8f5e9' : '#23263a', borderRadius: 2, color: cardText, fontWeight: 500, fontSize: 14, textAlign: 'center', width: '95%', maxWidth: '95%', mx: 'auto' }}>
+                    Dica: A plataforma mais rentável nesta season foi <span style={{ color: '#5edc1f', fontWeight: 700 }}>{mostProfitablePlatform}</span>!
                   </Box>
                 </Box>
               </Box>
-              {view === "pdf" && (
-                <Typography variant="h6">
-                  PDF Export (component placeholder)
-                </Typography>
-              )}
-              {view === "future" && (
-                <Typography variant="h6">
-                  Future Graphs (component placeholder)
-                </Typography>
-              )}
-              {view === "piecharts" && (
-                <Typography variant="h6">
-                  PieCharts (component placeholder)
-                </Typography>
-              )}
             </>
+          )}
+          {view === "profile" && <Profile />}
+          {view === "pdf" && (
+            <Typography variant="h6">
+              PDF Export (component placeholder)
+            </Typography>
+          )}
+          {view === "future" && (
+            <Typography variant="h6">
+              Future Graphs (component placeholder)
+            </Typography>
+          )}
+          {view === "piecharts" && (
+            <Typography variant="h6">
+              PieCharts (component placeholder)
+            </Typography>
           )}
         </Box>
       </Box>
