@@ -161,4 +161,27 @@ body, html {
     text-decoration: underline;
 }
 
+@media (max-width: 600px) {
+  .landing-container {
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+  }
+  .left-section, .right-section {
+    flex: none;
+    width: 100%;
+    min-height: unset;
+    padding: 24px 8px;
+    justify-content: flex-start;
+  }
+  .slogan h1 {
+    font-size: 2rem;
+    margin-bottom: 32px;
+    margin-top: 2rem;
+  }
+  .logo {
+    margin-bottom: 16px;
+  }
+}
+
 

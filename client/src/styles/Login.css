@@ -139,3 +139,22 @@ body {
 .signup-link a:hover {
     text-decoration: underline;
 }
+
+@media (max-width: 600px) {
+  .login-container {
+    min-height: 100vh;
+    padding: 0;
+    align-items: center;
+  }
+  .login-wrapper {
+    max-width: 100%;
+    margin: 0 8px;
+  }
+  .login-box {
+    padding: 1rem;
+    margin: 24px 0;
+  }
+  .login-title {
+    font-size: 1.5rem;
+  }
+}
