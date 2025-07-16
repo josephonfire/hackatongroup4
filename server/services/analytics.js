@@ -10,4 +10,16 @@ function getPlatformStats(data) {
     }));
 }
 
-module.exports = { getPlatformStats };
+// Funções para calcular a taxa de cliques
+function calculateCtr(impressions, clicks) {
+    if (impressions === 0) return "0.00"; // se não houver impressões, o CTR é 0
+    return ((clicks / impressions) * 100).toFixed(2); // retorna então CTR = (cliques / impressões) * 100 e passa para duas casas decimais
+}
+
+// Função para calcular o custo por clique
+function calculateCpc(cost, clicks) { 
+    if (clicks === 0) return "0.00"; // se não houver cliques, o CPC é 0
+    return (cost / clicks).toFixed(2); // retorna então CPC = custo / cliques e passa para duas casas decimais
+}
+
+module.exports = { getPlatformStats, calculateCtr, calculateCpc };

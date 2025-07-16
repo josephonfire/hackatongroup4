@@ -40,23 +40,23 @@
     "date": "2025-07-01"
   },
   {
-    "platform": "Google Ads",
+    "platform": "TikTok",
     "campaign": "Summer Sale",
-    "clicks": 1500,
-    "impressions": 20000,
-    "conversions": 130,
-    "cost": 2000,
-    "revenue": 12000,
+    "clicks": 1300,
+    "impressions": 17000,
+    "conversions": 120,
+    "cost": 1400,
+    "revenue": 10000,
     "date": "2025-06-01"
   },
   {
-    "platform": "Google Ads",
+    "platform": "TikTok",
     "campaign": "Back to School",
-    "clicks": 1100,
-    "impressions": 16000,
-    "conversions": 100,
-    "cost": 1500,
-    "revenue": 9000,
+    "clicks": 950,
+    "impressions": 13000,
+    "conversions": 85,
+    "cost": 1150,
+    "revenue": 7500,
     "date": "2025-07-01"
   },
   {
@@ -77,6 +77,26 @@
     "conversions": 25,
     "cost": 600,
     "revenue": 3500,
+    "date": "2025-07-01"
+  },
+  {
+    "platform": "X",
+    "campaign": "Summer Sale",
+    "clicks": 700,
+    "impressions": 9000,
+    "conversions": 60,
+    "cost": 800,
+    "revenue": 5000,
+    "date": "2025-06-01"
+  },
+  {
+    "platform": "X",
+    "campaign": "Back to School",
+    "clicks": 600,
+    "impressions": 8500,
+    "conversions": 55,
+    "cost": 750,
+    "revenue": 4200,
     "date": "2025-07-01"
   }
 ]
