@@ -77,3 +77,14 @@ button, .MuiButton-root {
 .MuiListItem-root, .campaign-sidebar-btn {
   cursor: pointer;
 }
+
+/* Profile page full width like dashboard */
+.profile-dashboard-style {
+  width: 100%;
+  min-height: 100vh;
+  background: #23263a;
+  border-radius: 0;
+  box-shadow: none;
+  color: #fff;
+  padding: 32px 0 32px 0;
+}

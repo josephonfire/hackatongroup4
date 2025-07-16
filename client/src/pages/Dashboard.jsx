@@ -515,15 +515,17 @@ export default function Dashboard() {
         </DialogActions>
       </Dialog>
       {/* Floating PDF Export Button - moved outside main content for correct positioning */}
-      <ExportPDF
-        exportRef={dashboardRef}
-        fileName="dashboard.pdf"
-        customButton={
-          <button className="export-pdf-fab" title="Download PDF">
-            <PictureAsPdfIcon style={{ width: 32, height: 32 }} />
-          </button>
-        }
-      />
+      {view !== 'profile' && (
+        <ExportPDF
+          exportRef={dashboardRef}
+          fileName="dashboard.pdf"
+          customButton={
+            <button className="export-pdf-fab" title="Download PDF">
+              <PictureAsPdfIcon style={{ width: 32, height: 32 }} />
+            </button>
+          }
+        />
+      )}
     </Box>
   );
 }
