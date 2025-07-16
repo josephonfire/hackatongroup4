@@ -359,11 +359,14 @@ export default function Dashboard() {
               <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', mb: 2, gap: 2 }}>
                 <Typography variant="h6" sx={{ color: cardText, fontWeight: 600 }}>Open Campaigns</Typography>
                 <Button
-                  onClick={handleAddCampaign}
+                  className="pdf-hide"
+                  aria-controls={Boolean(anchorEl) ? 'my-campaigns-menu' : undefined}
+                  aria-haspopup="true"
+                  onClick={handleMenuOpen}
                   sx={{
                     borderRadius: 3,
                     background: 'linear-gradient(90deg, #5edc1f 0%, #3bbf1f 100%)',
-                    color: '#181a20',
+                    color: '#fff',
                     border: 'none',
                     fontWeight: 700,
                     fontSize: 16,
@@ -373,8 +376,6 @@ export default function Dashboard() {
                     minHeight: 44,
                     boxShadow: '0 4px 16px 0 rgba(94,220,31,0.15)',
                     textTransform: 'none',
-                    display: 'flex',
-                    alignItems: 'center',
                     gap: 1.2,
                     transition: 'background 0.2s, box-shadow 0.2s, color 0.2s',
                     '&:hover': {
@@ -383,9 +384,9 @@ export default function Dashboard() {
                       boxShadow: '0 6px 20px 0 rgba(94,220,31,0.22)',
                     },
                   }}
-                  startIcon={<AddIcon sx={{ color: '#181a20' }} />}
+                  startIcon={<AddIcon sx={{ color: '#fff' }} />}
                 >
-                  Create Campaign
+                Create Campaign
                 </Button>
                 <Menu
                   id="my-campaigns-menu"
