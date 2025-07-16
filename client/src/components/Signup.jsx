@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import '../styles/Signup.css'; // Importa o ficheiro CSS
 
 function Signup() {
   const [username, setUsername] = useState("");
@@ -53,64 +54,58 @@ function Signup() {
   };
 
   return (
-    <div>
-      <div>
-        <div>
-          <h2>Sign Up</h2>
-          <form onSubmit={handleSignup}>
-            <div>
-              <p>
-                Already have an account? <a href="/login">Login</a>
-              </p>
-            </div>
-            <div>
-              <label htmlFor="email">Email:</label> <br />
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                placeholder="Enter your email"
-              />
-            </div>
-            <div>
-              <label htmlFor="password">Password:</label> <br />
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                  setPasswordError("");
-                }}
-                required
-                placeholder="Enter your password"
-              />
-            </div>
-            {passwordError && <p>{passwordError}</p>}
-            <div>
-              <label htmlFor="confirmPassword">Confirm your password:</label>
-              <br />
-              <input
-                type="password"
-                id="confirmPassword"
-                value={confirmPassword}
-                onChange={(e) => {
-                  setConfirmPassword(e.target.value);
-                  setPasswordError("");
-                }}
-                required
-                placeholder="Confirm your password"
-              ></input>
-            </div>
-            <br />
-            <button type="submit">Sign Up</button>
-          </form>
-        </div>
+    <div className="signup-container">
+      <div className="signup-box">
+        <h2 className="signup-title">Sign Up</h2>
+        <form onSubmit={handleSignup} className="signup-form">
+          <div>
+            <label htmlFor="email" className="signup-label">Email:</label>
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              placeholder="Enter your email"
+              className="signup-input"
+            />
+          </div>
+          <div>
+            <label htmlFor="password" className="signup-label">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => {
+                setPassword(e.target.value);
+                setPasswordError("");
+              }}
+              required
+              placeholder="Enter your password"
+              className="signup-input"
+            />
+          </div>
+          {passwordError && <p className="signup-error">{passwordError}</p>}
+          <div>
+            <label htmlFor="confirmPassword" className="signup-label">Confirm your password:</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => {
+                setConfirmPassword(e.target.value);
+                setPasswordError("");
+              }}
+              required
+              placeholder="Confirm your password"
+              className="signup-input"
+            />
+          </div>
+          <button type="submit" className="signup-button">Sign Up</button>
+        </form>
       </div>
     </div>
   );
 }
-export default Signup;
 
+export default Signup;
