@@ -1,0 +1,4 @@
+/* SummaryCards component styles */
+.summary-cards, .summary-card, .summary-card h3, .summary-card .value {
+  transition: color 0.3s;
+}

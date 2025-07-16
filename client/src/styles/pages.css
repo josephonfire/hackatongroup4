@@ -1,0 +1,55 @@
+/* App layout styles */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f8;
+  color: #222;
+}
+
+.app-main {
+  min-height: 100vh;
+  background: #f4f6f8;
+  display: flex;
+}
+
+/* Sidebar styles */
+.MuiDrawer-paper {
+  background: #222e3c !important;
+  color: #fff;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+}
+.MuiToolbar-root {
+  background: #222e3c;
+  color: #fff;
+}
+
+/* Main content styles */
+.MuiBox-root[component="main"] {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  margin: 2rem;
+  padding: 2rem;
+}
+
+/* Typography */
+h4, h6, .MuiTypography-h4, .MuiTypography-h6 {
+  color: #222e3c;
+}
+
+/* Divider */
+.MuiDivider-root {
+  margin: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .MuiBox-root[component="main"] {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+  .MuiDrawer-paper {
+    width: 180px !important;
+    padding: 1rem 0.5rem;
+  }
+}
