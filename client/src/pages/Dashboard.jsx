@@ -183,7 +183,7 @@ export default function Dashboard() {
       }}
     >
       <CssBaseline />
-      <ModernSidebar view={view} setView={setView} />
+      <ModernSidebar view={view} setView={setView} dashboardRef={dashboardRef} />
       <Box component="main" sx={{ flexGrow: 1, p: { xs: 2, md: 4 }, color: pageText, minHeight: '100vh', maxHeight: '100vh', overflow: 'hidden', display: 'flex', flexDirection: 'column', gap: 4 }}>
         {view === "dashboard" && (
           <motion.div
@@ -422,27 +422,6 @@ export default function Dashboard() {
               >
                 <AddIcon sx={{ color: '#23263a', fontSize: 36 }} />
               </Button>
-              <ExportPDF
-                exportRef={dashboardRef}
-                fileName="dashboard.pdf"
-                customButton={
-                  <button className="export-pdf-fab" title="Download PDF" style={{
-                    width: 56,
-                    height: 56,
-                    borderRadius: '50%',
-                    background: 'linear-gradient(90deg, #69bec4 0%, #5edc1f 100%)',
-                    border: 'none',
-                    boxShadow: '0 4px 16px 0 #69bec455',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    cursor: 'pointer',
-                    transition: 'background 0.3s, box-shadow 0.3s, transform 0.3s',
-                  }}>
-                    <PictureAsPdfIcon style={{ width: 32, height: 32, color: '#23263a' }} />
-                  </button>
-                }
-              />
             </Box>
           </motion.div>
         )}
