@@ -22,17 +22,18 @@ export default function Dashboard() {
   const [investment, setInvestment] = useState("");
   const dashboardRef = useRef();
 
-  // Botão evento para abrir o menu de campanhas
+  // Event button to open the campaign menu
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  // Botão evento para fechar o menu de campanhas
+  // Event button to close the campaign menu
   const handleMenuClose = () => {
     setAnchorEl(null);
   };
-  // Botão evento para adicionar campanha
+  // Event button to add campaign
   const handleAddCampaign = () => {
-    setDialogOpen(true);
+    // logic to add campaign
+    alert('Add new campaign!');
     setAnchorEl(null);
   };
   const handleDialogClose = () => {
@@ -75,15 +76,15 @@ export default function Dashboard() {
     { name: "X", value: 100 },
   ];
 
-  // Dados de exemplo para o gráfico de progresso da season
+  // Example data for the season progress chart
   const seasonData = [
-    { dia: 'Dia 1', Instagram: 1200, Facebook: 900, TikTok: 800, LinkedIn: 400, X: 200 },
-    { dia: 'Dia 2', Instagram: 1500, Facebook: 1100, TikTok: 950, LinkedIn: 500, X: 300 },
-    { dia: 'Dia 3', Instagram: 1800, Facebook: 1300, TikTok: 1200, LinkedIn: 700, X: 400 },
-    { dia: 'Dia 4', Instagram: 2100, Facebook: 1600, TikTok: 1400, LinkedIn: 900, X: 500 },
-    { dia: 'Dia 5', Instagram: 2500, Facebook: 1800, TikTok: 1700, LinkedIn: 1100, X: 600 },
-    { dia: 'Dia 6', Instagram: 3000, Facebook: 2000, TikTok: 2000, LinkedIn: 1300, X: 700 },
-    { dia: 'Dia 7', Instagram: 3500, Facebook: 2200, TikTok: 2300, LinkedIn: 1500, X: 800 },
+    { day: 'Day 1', Instagram: 1200, Facebook: 900, TikTok: 800, LinkedIn: 400, X: 200 },
+    { day: 'Day 2', Instagram: 1500, Facebook: 1100, TikTok: 950, LinkedIn: 500, X: 300 },
+    { day: 'Day 3', Instagram: 1800, Facebook: 1300, TikTok: 1200, LinkedIn: 700, X: 400 },
+    { day: 'Day 4', Instagram: 2100, Facebook: 1600, TikTok: 1400, LinkedIn: 900, X: 500 },
+    { day: 'Day 5', Instagram: 2500, Facebook: 1800, TikTok: 1700, LinkedIn: 1100, X: 600 },
+    { day: 'Day 6', Instagram: 3000, Facebook: 2000, TikTok: 2000, LinkedIn: 1300, X: 700 },
+    { day: 'Day 7', Instagram: 3500, Facebook: 2200, TikTok: 2300, LinkedIn: 1500, X: 800 },
   ];
   // Descobrir a plataforma mais rentável
   const totals = seasonData.reduce((acc, cur) => {
@@ -456,14 +457,14 @@ export default function Dashboard() {
           )}
         </Box>
       </Box>
-      {/* Dialog para criar campanha */}
+      {/* Dialog to create campaign */}
       <Dialog open={dialogOpen} onClose={handleDialogClose}>
-        <DialogTitle>Criar Nova Campanha</DialogTitle>
+        <DialogTitle>Create New Campaign</DialogTitle>
         <DialogContent sx={{ minWidth: 340 }}>
           <TextField
             autoFocus
             margin="dense"
-            label="Nome da campanha"
+            label="Campaign name"
             type="text"
             fullWidth
             variant="outlined"
@@ -472,11 +473,11 @@ export default function Dashboard() {
             sx={{ mb: 2 }}
           />
           <FormControl fullWidth sx={{ mb: 2 }}>
-            <InputLabel id="platform-label">Plataforma</InputLabel>
+            <InputLabel id="platform-label">Platform</InputLabel>
             <Select
               labelId="platform-label"
               value={platform}
-              label="Plataforma"
+              label="Platform"
               onChange={e => setPlatform(e.target.value)}
             >
               <MenuItem value="Instagram">Instagram</MenuItem>
@@ -488,7 +489,7 @@ export default function Dashboard() {
           </FormControl>
           <TextField
             margin="dense"
-            label="Valor de investimento"
+            label="Investment value"
             type="number"
             fullWidth
             variant="outlined"
@@ -498,8 +499,8 @@ export default function Dashboard() {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleDialogClose} color="secondary">Cancelar</Button>
-          <Button onClick={handleDialogSave} color="primary" variant="contained">Salvar</Button>
+          <Button onClick={handleDialogClose} color="secondary">Cancel</Button>
+          <Button onClick={handleDialogSave} color="primary" variant="contained">Save</Button>
         </DialogActions>
       </Dialog>
       {/* Floating PDF Export Button - moved outside main content for correct positioning */}

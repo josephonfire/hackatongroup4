@@ -14,7 +14,7 @@ import {
 const COLORS = {
   Instagram: '#e1306c',
   Facebook: '#1877f2',
-  TikTok: '#010101',
+  TikTok: '#FFD600',
   LinkedIn: '#0077b5',
   X: '#5edc1f',
 };
@@ -48,8 +48,8 @@ export default function ModernLineChart({ data, whiteBg }) {
     <ResponsiveContainer width="100%" height={180}>
       <LineChart data={data} margin={{ top: 8, right: 12, left: 0, bottom: 8 }}>
         <CartesianGrid stroke={whiteBg ? '#e0e0e0' : '#333'} strokeDasharray="3 3" vertical={false} />
-        <XAxis dataKey="dia" tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500, fontSize: 11 }} />
-        <YAxis tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500, fontSize: 11 }} />
+        <XAxis dataKey="day" tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500 }} />
+        <YAxis tick={{ fill: whiteBg ? '#23263a' : '#fff', fontWeight: 500 }} />
         <Tooltip content={<CustomTooltip whiteBg={whiteBg} />} />
         <Legend iconType="circle" wrapperStyle={{ paddingTop: 4, color: whiteBg ? '#23263a' : '#fff', fontWeight: 600, fontSize: 12 }} />
         <Line type="monotone" dataKey="Instagram" stroke={COLORS.Instagram} strokeWidth={2.2} dot={{ r: 3 }} activeDot={{ r: 5 }} />
