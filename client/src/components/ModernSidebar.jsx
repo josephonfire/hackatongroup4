@@ -32,10 +32,12 @@ export default function ModernSidebar({ view, setView, dashboardRef }) {
       tempContainer.style.position = 'absolute';
       tempContainer.style.left = '-9999px';
       tempContainer.style.top = '0';
-      tempContainer.style.width = '1200px'; // Fixed width for consistent PDF
+      tempContainer.style.width = '1600px'; // Much wider for better spacing
       tempContainer.style.background = '#23263a';
-      tempContainer.style.padding = '20px';
+      tempContainer.style.padding = '60px'; // Much more padding
       tempContainer.style.color = '#e0e0e0';
+      tempContainer.style.fontSize = '16px'; // Larger font size
+      tempContainer.style.lineHeight = '1.6'; // Better line spacing
       document.body.appendChild(tempContainer);
 
       // Clone the dashboard content
@@ -46,6 +48,38 @@ export default function ModernSidebar({ view, setView, dashboardRef }) {
       if (sidebarClone) {
         sidebarClone.remove();
       }
+
+      // Add better spacing for PDF layout
+      const mainContent = dashboardClone.querySelector('main');
+      if (mainContent) {
+        mainContent.style.padding = '40px';
+        mainContent.style.margin = '0';
+        mainContent.style.gap = '48px';
+      }
+
+      // Improve chart container spacing
+      const chartContainers = dashboardClone.querySelectorAll('[style*="background"]');
+      chartContainers.forEach(container => {
+        if (container.style.background && container.style.background.includes('#151623')) {
+          container.style.marginBottom = '48px';
+          container.style.padding = '48px';
+          container.style.borderRadius = '16px';
+        }
+      });
+
+      // Add spacing to grid layouts
+      const gridContainers = dashboardClone.querySelectorAll('[style*="display: grid"]');
+      gridContainers.forEach(grid => {
+        grid.style.gap = '32px';
+        grid.style.marginBottom = '48px';
+      });
+
+      // Increase spacing between summary cards
+      const summaryCards = dashboardClone.querySelectorAll('[style*="background: linear-gradient"]');
+      summaryCards.forEach(card => {
+        card.style.marginBottom = '32px';
+        card.style.padding = '32px';
+      });
 
       // Remove floating buttons from the clone
       const floatingButtons = dashboardClone.querySelectorAll('[style*="position: fixed"]');
@@ -96,8 +130,13 @@ export default function ModernSidebar({ view, setView, dashboardRef }) {
       const canvas = await html2canvas(tempContainer, { 
         scale: 2,
         backgroundColor: '#23263a',
-        width: 1200,
-        height: dashboardElement.scrollHeight
+        width: 1600,
+        height: dashboardElement.scrollHeight * 1.2, // Increase height for better spacing
+        useCORS: true,
+        allowTaint: true,
+        scrollX: 0,
+        scrollY: 0,
+        logging: false
       });
 
       // Clean up
