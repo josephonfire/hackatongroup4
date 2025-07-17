@@ -116,8 +116,10 @@ O front estará em http://localhost:3000
 ---
 
 ## Equipa
-- josephonfire (GitHub)
-- Bytes4Future Hackathon - Grupo 4
+- @josephonfire (José Pedro)
+- @Ellie-Yeah (Elisabete F)
+- @Gllp2 (Gonçalo Laureano)
+- @Verdocas (Pedro Fernandes)
 
 ---
 
