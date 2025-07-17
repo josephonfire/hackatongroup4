@@ -42,9 +42,7 @@ export default function Dashboard() {
   };
   // Event button to add campaign
   const handleAddCampaign = () => {
-
-    alert('Add new campaign!');
-    setAnchorEl(null);
+    setDialogOpen(true);
   };
   const handleDialogClose = () => {
     setDialogOpen(false);
@@ -496,8 +494,8 @@ export default function Dashboard() {
             />
         </DialogContent>
         <DialogActions sx={{ justifyContent: 'center', pb: 2 }}>
-          <Button onClick={handleDialogClose} color="secondary" sx={{ fontWeight: 600, px: 3 }}>Cancel</Button>
-          <Button onClick={handleDialogSave} color="primary" variant="contained" sx={{ fontWeight: 700, px: 3, background: 'linear-gradient(90deg, #5edc1f 0%, #3bbf1f 100%)', color: '#181a20', '&:hover': { background: 'linear-gradient(90deg, #3bbf1f 0%, #5edc1f 100%)', color: '#fff' } }}>Save</Button>
+          <Button onClick={handleDialogClose} sx={{ fontWeight: 600, px: 3, color: '#69bec4', '&:hover': { color: '#5edc1f' } }}>Cancel</Button>
+          <Button onClick={handleDialogSave} variant="contained" sx={{ fontWeight: 700, px: 3, background: 'linear-gradient(90deg, #69bec4 0%, #5edc1f 100%)', color: '#23263a', '&:hover': { background: 'linear-gradient(90deg, #5edc1f 0%, #69bec4 100%)', color: '#23263a' } }}>Save</Button>
         </DialogActions>
       </Dialog>
     </Box>
