@@ -75,6 +75,9 @@ export default function Profile({ connectedSocials = [], onChange }) {
     if (onChange) onChange(updated);
   };
 
+  function LogoutButton() {
+  const navigate = useNavigate();
+
   const handleLogout = () => {
     
     navigate("/");
