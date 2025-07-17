@@ -18,45 +18,16 @@ import "../styles/Profile.css";
 import { Logo } from "./Logotipo";
 
 const SOCIALS = [
-  {
-    key: "Instagram",
-    name: "Instagram",
-    icon: <InstagramIcon className="profile-social-icon instagram" />,
-    color: "#e1306c",
-  },
-  {
-    key: "Facebook",
-    name: "Facebook",
-    icon: <FacebookIcon className="profile-social-icon facebook" />,
-    color: "#1877f2",
-  },
-  {
-    key: "TikTok",
-    name: "TikTok",
-    icon: (
-      <MusicNoteIcon
-        className="profile-social-icon tiktok"
-        style={{ color: "#fff" }}
-      />
-    ),
-    color: "#FFFFFF",
-  },
-  {
-    key: "LinkedIn",
-    name: "LinkedIn",
-    icon: <LinkedInIcon className="profile-social-icon linkedin" />,
-    color: "#0077b5",
-  },
-  {
-    key: "X",
-    name: "X",
-    icon: <XIcon className="profile-social-icon x" style={{ color: "#fff" }} />,
-    color: "#5edc1f",
-  },
+  { key: "instagram", name: "Instagram", icon: <InstagramIcon />, color: "#E1306C" },
+  { key: "facebook", name: "Facebook", icon: <FacebookIcon />, color: "#1877F3" },
+  { key: "tiktok", name: "TikTok", icon: <MusicNoteIcon />, color: "#25F4EE" },
+  { key: "linkedin", name: "LinkedIn", icon: <LinkedInIcon />, color: "#0A66C2" },
+  { key: "x", name: "X", icon: <XIcon />, color: "#FFF" },
 ];
 
 export default function Profile({ connectedSocials = [], onChange }) {
   const [connected, setConnected] = useState(connectedSocials);
+  const navigate = useNavigate();
   // Mock user info
   const user = {
     name: "Carolina",
@@ -75,12 +46,10 @@ export default function Profile({ connectedSocials = [], onChange }) {
     if (onChange) onChange(updated);
   };
 
-  function LogoutButton() {
-  const navigate = useNavigate();
-
   const handleLogout = () => {
-    
-    navigate("/");
+    localStorage.removeItem('token');
+    localStorage.removeItem('email');
+    navigate('/');
   };
 
   return (
