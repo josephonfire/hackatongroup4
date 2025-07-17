@@ -31,7 +31,7 @@ export default function CampaignSidebar({
           className="campaign-sidebar-title"
           style={{ color: sidebarText || "#fff" }}
         >
-          AdCharts
+          AdCharter
         </span>
         <button
           onClick={onBgToggle}
