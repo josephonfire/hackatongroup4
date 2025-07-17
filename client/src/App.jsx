@@ -25,6 +25,14 @@ function ProfileWithSidebar() {
   );
 }
 
+function Title() {
+  return (
+    <div>
+      <h1>AdChart</h1>
+    </div>
+  )
+}
+
 function App() {
   return (
     <Router>

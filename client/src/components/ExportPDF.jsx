@@ -1,10 +1,9 @@
-
-import React from 'react';
-import '../styles/ExportPDF.css';
+import React from "react";
+import "../styles/ExportPDF.css";
 // Make sure to install these packages in your project:
 // npm install jspdf html2canvas
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import jsPDF from "jspdf";
+import html2canvas from "html2canvas";
 
 /**
  * ExportPDF component
@@ -12,11 +11,11 @@ import html2canvas from 'html2canvas';
  *   - exportRef: React ref to the DOM node to export (e.g., the dashboard section)
  *   - fileName: Name for the downloaded PDF
  */
-const ExportPDF = ({ exportRef, fileName = 'dashboard.pdf', customButton }) => {
+const ExportPDF = ({ exportRef, fileName = "dashboard.pdf", customButton }) => {
   const handleDownload = async () => {
     // Hide elements with .pdf-hide
-    const style = document.createElement('style');
-    style.innerHTML = '.pdf-hide { display: none !important; }';
+    const style = document.createElement("style");
+    style.innerHTML = ".pdf-hide { display: none !important; }";
     document.head.appendChild(style);
 
     try {
@@ -27,15 +26,19 @@ const ExportPDF = ({ exportRef, fileName = 'dashboard.pdf', customButton }) => {
       const originalHeight = element.style.height;
       const originalMaxHeight = element.style.maxHeight;
       const originalOverflowY = element.style.overflowY;
-      element.style.overflow = 'visible';
-      element.style.height = element.scrollHeight + 'px';
-      element.style.maxHeight = 'none';
-      element.style.overflowY = 'visible';
+      element.style.overflow = "visible";
+      element.style.height = element.scrollHeight + "px";
+      element.style.maxHeight = "none";
+      element.style.overflowY = "visible";
       // Aguarda o layout atualizar
-      await new Promise(r => setTimeout(r, 100));
+      await new Promise((r) => setTimeout(r, 100));
       const canvas = await html2canvas(element, { scale: 2, useCORS: true });
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF({
+        orientation: "landscape",
+        unit: "pt",
+        format: "a4",
+      });
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
 
@@ -58,7 +61,7 @@ const ExportPDF = ({ exportRef, fileName = 'dashboard.pdf', customButton }) => {
         y = 0;
       }
 
-      pdf.addImage(imgData, 'PNG', x, y, renderWidth, renderHeight);
+      pdf.addImage(imgData, "PNG", x, y, renderWidth, renderHeight);
       pdf.save(fileName);
       // Restore original styles
       element.style.overflow = originalOverflow;

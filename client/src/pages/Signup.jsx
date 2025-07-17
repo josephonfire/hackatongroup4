@@ -1,7 +1,7 @@
 import Signup from "../components/Signup";
 import { Footer } from "../components/Footer";
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom"; 
+import { useNavigate } from "react-router-dom";
 
 function SignUpPage() {
   return (
