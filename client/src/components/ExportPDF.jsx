@@ -22,7 +22,18 @@ const ExportPDF = ({ exportRef, fileName = 'dashboard.pdf', customButton }) => {
     try {
       if (!exportRef?.current) return;
       const element = exportRef.current;
-      const canvas = await html2canvas(element, { scale: 2 }); // higher quality
+      // Expand height to fit all content (remove overflow, set height to scrollHeight)
+      const originalOverflow = element.style.overflow;
+      const originalHeight = element.style.height;
+      const originalMaxHeight = element.style.maxHeight;
+      const originalOverflowY = element.style.overflowY;
+      element.style.overflow = 'visible';
+      element.style.height = element.scrollHeight + 'px';
+      element.style.maxHeight = 'none';
+      element.style.overflowY = 'visible';
+      // Aguarda o layout atualizar
+      await new Promise(r => setTimeout(r, 100));
+      const canvas = await html2canvas(element, { scale: 2, useCORS: true });
       const imgData = canvas.toDataURL('image/png');
       const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
       const pageWidth = pdf.internal.pageSize.getWidth();
@@ -36,13 +47,11 @@ const ExportPDF = ({ exportRef, fileName = 'dashboard.pdf', customButton }) => {
 
       let renderWidth, renderHeight, x, y;
       if (imgAspect > pageAspect) {
-        // Image is wider than page
         renderWidth = pageWidth;
         renderHeight = pageWidth / imgAspect;
         x = 0;
         y = (pageHeight - renderHeight) / 2;
       } else {
-        // Image is taller than page
         renderHeight = pageHeight;
         renderWidth = pageHeight * imgAspect;
         x = (pageWidth - renderWidth) / 2;
@@ -51,6 +60,11 @@ const ExportPDF = ({ exportRef, fileName = 'dashboard.pdf', customButton }) => {
 
       pdf.addImage(imgData, 'PNG', x, y, renderWidth, renderHeight);
       pdf.save(fileName);
+      // Restore original styles
+      element.style.overflow = originalOverflow;
+      element.style.height = originalHeight;
+      element.style.maxHeight = originalMaxHeight;
+      element.style.overflowY = originalOverflowY;
     } finally {
       // Remove the style after export
       document.head.removeChild(style);

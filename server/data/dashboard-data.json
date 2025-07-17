@@ -24,48 +24,87 @@
     { "name": "X", "value": 9200 }
   ],
   "seasonData7Days": [
-    { "day": "Mon", "Instagram": 1200, "Facebook": 1000, "TikTok": 1300, "LinkedIn": 400, "X": 700 },
-    { "day": "Tue", "Instagram": 1280, "Facebook": 970, "TikTok": 1400, "LinkedIn": 410, "X": 750 },
-    { "day": "Wed", "Instagram": 1230, "Facebook": 950, "TikTok": 1500, "LinkedIn": 420, "X": 720 },
-    { "day": "Thu", "Instagram": 1350, "Facebook": 980, "TikTok": 1380, "LinkedIn": 430, "X": 800 },
-    { "day": "Fri", "Instagram": 1400, "Facebook": 940, "TikTok": 1600, "LinkedIn": 440, "X": 690 },
-    { "day": "Sat", "Instagram": 1320, "Facebook": 960, "TikTok": 1550, "LinkedIn": 450, "X": 770 },
-    { "day": "Sun", "Instagram": 1450, "Facebook": 920, "TikTok": 1480, "LinkedIn": 460, "X": 730 }
+    {
+      "day": "Mon",
+      "Instagram": { "revenue": 1200, "clicks": 180, "impressions": 2100, "conversions": 15, "cost": 140, "ctr": 8.57, "cpc": 0.78, "cvr": 8.33, "roas": 8.57 },
+      "Facebook": { "revenue": 900, "clicks": 90, "impressions": 1700, "conversions": 7, "cost": 110, "ctr": 5.29, "cpc": 1.22, "cvr": 7.78, "roas": 8.18 },
+      "TikTok": { "revenue": 1700, "clicks": 220, "impressions": 2500, "conversions": 18, "cost": 160, "ctr": 8.8, "cpc": 0.73, "cvr": 8.18, "roas": 10.63 },
+      "LinkedIn": { "revenue": 500, "clicks": 30, "impressions": 800, "conversions": 2, "cost": 60, "ctr": 3.75, "cpc": 2.00, "cvr": 6.67, "roas": 8.33 },
+      "X": { "revenue": 800, "clicks": 60, "impressions": 1200, "conversions": 5, "cost": 70, "ctr": 5.00, "cpc": 1.17, "cvr": 8.33, "roas": 11.43 }
+    },
+    {
+      "day": "Tue",
+      "Instagram": { "revenue": 1350, "clicks": 200, "impressions": 2200, "conversions": 18, "cost": 150, "ctr": 9.09, "cpc": 0.75, "cvr": 9.00, "roas": 9.00 },
+      "Facebook": { "revenue": 1100, "clicks": 100, "impressions": 1800, "conversions": 8, "cost": 120, "ctr": 5.56, "cpc": 1.20, "cvr": 8.00, "roas": 9.17 },
+      "TikTok": { "revenue": 2000, "clicks": 250, "impressions": 2700, "conversions": 22, "cost": 170, "ctr": 9.26, "cpc": 0.68, "cvr": 8.80, "roas": 11.76 },
+      "LinkedIn": { "revenue": 600, "clicks": 35, "impressions": 900, "conversions": 3, "cost": 65, "ctr": 3.89, "cpc": 1.86, "cvr": 8.57, "roas": 9.23 },
+      "X": { "revenue": 950, "clicks": 80, "impressions": 1300, "conversions": 7, "cost": 80, "ctr": 6.15, "cpc": 1.00, "cvr": 8.75, "roas": 11.88 }
+    },
+    {
+      "day": "Wed",
+      "Instagram": { "revenue": 1400, "clicks": 210, "impressions": 2300, "conversions": 20, "cost": 155, "ctr": 9.13, "cpc": 0.74, "cvr": 9.52, "roas": 9.03 },
+      "Facebook": { "revenue": 1200, "clicks": 110, "impressions": 1850, "conversions": 9, "cost": 125, "ctr": 5.95, "cpc": 1.14, "cvr": 8.18, "roas": 9.60 },
+      "TikTok": { "revenue": 2100, "clicks": 270, "impressions": 2800, "conversions": 25, "cost": 180, "ctr": 9.64, "cpc": 0.67, "cvr": 9.26, "roas": 11.67 },
+      "LinkedIn": { "revenue": 650, "clicks": 40, "impressions": 950, "conversions": 4, "cost": 70, "ctr": 4.21, "cpc": 1.75, "cvr": 10.00, "roas": 9.29 },
+      "X": { "revenue": 1000, "clicks": 90, "impressions": 1400, "conversions": 8, "cost": 90, "ctr": 6.43, "cpc": 1.00, "cvr": 8.89, "roas": 11.11 }
+    }
   ],
   "seasonData30Days": [
-    { "day": "Day 1", "Instagram": 1200, "Facebook": 1000, "TikTok": 1300, "LinkedIn": 400, "X": 700 },
-    { "day": "Day 2", "Instagram": 1280, "Facebook": 970, "TikTok": 1400, "LinkedIn": 410, "X": 750 },
-    { "day": "Day 3", "Instagram": 1230, "Facebook": 950, "TikTok": 1500, "LinkedIn": 420, "X": 720 },
-    { "day": "Day 4", "Instagram": 1350, "Facebook": 980, "TikTok": 1380, "LinkedIn": 430, "X": 800 },
-    { "day": "Day 5", "Instagram": 1400, "Facebook": 940, "TikTok": 1600, "LinkedIn": 440, "X": 690 },
-    { "day": "Day 6", "Instagram": 1320, "Facebook": 960, "TikTok": 1550, "LinkedIn": 450, "X": 770 },
-    { "day": "Day 7", "Instagram": 1450, "Facebook": 920, "TikTok": 1480, "LinkedIn": 460, "X": 730 },
-    { "day": "Day 8", "Instagram": 1380, "Facebook": 950, "TikTok": 1420, "LinkedIn": 470, "X": 760 },
-    { "day": "Day 9", "Instagram": 1420, "Facebook": 930, "TikTok": 1550, "LinkedIn": 480, "X": 710 },
-    { "day": "Day 10", "Instagram": 1300, "Facebook": 960, "TikTok": 1500, "LinkedIn": 490, "X": 780 },
-    { "day": "Day 11", "Instagram": 1460, "Facebook": 940, "TikTok": 1600, "LinkedIn": 500, "X": 720 },
-    { "day": "Day 12", "Instagram": 1400, "Facebook": 950, "TikTok": 1480, "LinkedIn": 510, "X": 770 },
-    { "day": "Day 13", "Instagram": 1500, "Facebook": 920, "TikTok": 1520, "LinkedIn": 520, "X": 730 },
-    { "day": "Day 14", "Instagram": 1350, "Facebook": 950, "TikTok": 1400, "LinkedIn": 530, "X": 760 },
-    { "day": "Day 15", "Instagram": 1420, "Facebook": 930, "TikTok": 1550, "LinkedIn": 540, "X": 710 },
-    { "day": "Day 16", "Instagram": 1300, "Facebook": 960, "TikTok": 1500, "LinkedIn": 550, "X": 780 },
-    { "day": "Day 17", "Instagram": 1460, "Facebook": 940, "TikTok": 1600, "LinkedIn": 560, "X": 720 },
-    { "day": "Day 18", "Instagram": 1400, "Facebook": 950, "TikTok": 1480, "LinkedIn": 570, "X": 770 },
-    { "day": "Day 19", "Instagram": 1500, "Facebook": 920, "TikTok": 1520, "LinkedIn": 580, "X": 730 },
-    { "day": "Day 20", "Instagram": 1350, "Facebook": 950, "TikTok": 1400, "LinkedIn": 590, "X": 760 },
-    { "day": "Day 21", "Instagram": 1420, "Facebook": 930, "TikTok": 1550, "LinkedIn": 600, "X": 710 },
-    { "day": "Day 22", "Instagram": 1300, "Facebook": 960, "TikTok": 1500, "LinkedIn": 610, "X": 780 },
-    { "day": "Day 23", "Instagram": 1460, "Facebook": 940, "TikTok": 1600, "LinkedIn": 620, "X": 720 },
-    { "day": "Day 24", "Instagram": 1400, "Facebook": 950, "TikTok": 1480, "LinkedIn": 630, "X": 770 },
-    { "day": "Day 25", "Instagram": 1500, "Facebook": 920, "TikTok": 1520, "LinkedIn": 640, "X": 730 },
-    { "day": "Day 26", "Instagram": 1350, "Facebook": 950, "TikTok": 1400, "LinkedIn": 650, "X": 760 },
-    { "day": "Day 27", "Instagram": 1420, "Facebook": 930, "TikTok": 1550, "LinkedIn": 660, "X": 710 },
-    { "day": "Day 28", "Instagram": 1300, "Facebook": 960, "TikTok": 1500, "LinkedIn": 670, "X": 780 },
-    { "day": "Day 29", "Instagram": 1460, "Facebook": 940, "TikTok": 1600, "LinkedIn": 680, "X": 720 },
-    { "day": "Day 30", "Instagram": 1400, "Facebook": 950, "TikTok": 1480, "LinkedIn": 690, "X": 770 }
+    {
+      "day": "Day 1",
+      "Instagram": { "revenue": 1200, "clicks": 180, "impressions": 2100, "conversions": 15, "cost": 140, "ctr": 8.57, "cpc": 0.78, "cvr": 8.33, "roas": 8.57 },
+      "Facebook": { "revenue": 900, "clicks": 90, "impressions": 1700, "conversions": 7, "cost": 110, "ctr": 5.29, "cpc": 1.22, "cvr": 7.78, "roas": 8.18 },
+      "TikTok": { "revenue": 1700, "clicks": 220, "impressions": 2500, "conversions": 18, "cost": 160, "ctr": 8.8, "cpc": 0.73, "cvr": 8.18, "roas": 10.63 },
+      "LinkedIn": { "revenue": 500, "clicks": 30, "impressions": 800, "conversions": 2, "cost": 60, "ctr": 3.75, "cpc": 2.00, "cvr": 6.67, "roas": 8.33 },
+      "X": { "revenue": 800, "clicks": 60, "impressions": 1200, "conversions": 5, "cost": 70, "ctr": 5.00, "cpc": 1.17, "cvr": 8.33, "roas": 11.43 }
+    },
+    {
+      "day": "Day 2",
+      "Instagram": { "revenue": 1350, "clicks": 200, "impressions": 2200, "conversions": 18, "cost": 150, "ctr": 9.09, "cpc": 0.75, "cvr": 9.00, "roas": 9.00 },
+      "Facebook": { "revenue": 1100, "clicks": 100, "impressions": 1800, "conversions": 8, "cost": 120, "ctr": 5.56, "cpc": 1.20, "cvr": 8.00, "roas": 9.17 },
+      "TikTok": { "revenue": 2000, "clicks": 250, "impressions": 2700, "conversions": 22, "cost": 170, "ctr": 9.26, "cpc": 0.68, "cvr": 8.80, "roas": 11.76 },
+      "LinkedIn": { "revenue": 600, "clicks": 35, "impressions": 900, "conversions": 3, "cost": 65, "ctr": 3.89, "cpc": 1.86, "cvr": 8.57, "roas": 9.23 },
+      "X": { "revenue": 950, "clicks": 80, "impressions": 1300, "conversions": 7, "cost": 80, "ctr": 6.15, "cpc": 1.00, "cvr": 8.75, "roas": 11.88 }
+    },
+    {
+      "day": "Day 3",
+      "Instagram": { "revenue": 1400, "clicks": 210, "impressions": 2300, "conversions": 20, "cost": 155, "ctr": 9.13, "cpc": 0.74, "cvr": 9.52, "roas": 9.03 },
+      "Facebook": { "revenue": 1200, "clicks": 110, "impressions": 1850, "conversions": 9, "cost": 125, "ctr": 5.95, "cpc": 1.14, "cvr": 8.18, "roas": 9.60 },
+      "TikTok": { "revenue": 2100, "clicks": 270, "impressions": 2800, "conversions": 25, "cost": 180, "ctr": 9.64, "cpc": 0.67, "cvr": 9.26, "roas": 11.67 },
+      "LinkedIn": { "revenue": 650, "clicks": 40, "impressions": 950, "conversions": 4, "cost": 70, "ctr": 4.21, "cpc": 1.75, "cvr": 10.00, "roas": 9.29 },
+      "X": { "revenue": 1000, "clicks": 90, "impressions": 1400, "conversions": 8, "cost": 90, "ctr": 6.43, "cpc": 1.00, "cvr": 8.89, "roas": 11.11 }
+    },
+    {
+      "day": "Day 4",
+      "Instagram": { "revenue": 1500, "clicks": 220, "impressions": 2400, "conversions": 22, "cost": 160, "ctr": 9.17, "cpc": 0.73, "cvr": 10.00, "roas": 9.38 },
+      "Facebook": { "revenue": 1300, "clicks": 120, "impressions": 1900, "conversions": 10, "cost": 130, "ctr": 6.32, "cpc": 1.08, "cvr": 8.33, "roas": 10.00 },
+      "TikTok": { "revenue": 2200, "clicks": 280, "impressions": 2900, "conversions": 28, "cost": 190, "ctr": 9.66, "cpc": 0.68, "cvr": 10.00, "roas": 11.58 },
+      "LinkedIn": { "revenue": 700, "clicks": 45, "impressions": 1000, "conversions": 5, "cost": 75, "ctr": 4.50, "cpc": 1.67, "cvr": 11.11, "roas": 9.33 },
+      "X": { "revenue": 1100, "clicks": 100, "impressions": 1500, "conversions": 10, "cost": 100, "ctr": 6.67, "cpc": 1.00, "cvr": 10.00, "roas": 11.00 }
+    },
+    {
+      "day": "Day 5",
+      "Instagram": { "revenue": 1600, "clicks": 230, "impressions": 2500, "conversions": 25, "cost": 170, "ctr": 9.20, "cpc": 0.74, "cvr": 10.87, "roas": 9.41 },
+      "Facebook": { "revenue": 1400, "clicks": 130, "impressions": 2000, "conversions": 12, "cost": 140, "ctr": 6.50, "cpc": 1.08, "cvr": 9.23, "roas": 10.00 },
+      "TikTok": { "revenue": 2300, "clicks": 290, "impressions": 3000, "conversions": 30, "cost": 200, "ctr": 9.67, "cpc": 0.69, "cvr": 10.34, "roas": 11.50 },
+      "LinkedIn": { "revenue": 750, "clicks": 50, "impressions": 1050, "conversions": 6, "cost": 80, "ctr": 4.76, "cpc": 1.60, "cvr": 12.00, "roas": 9.38 },
+      "X": { "revenue": 1200, "clicks": 110, "impressions": 1600, "conversions": 12, "cost": 110, "ctr": 6.88, "cpc": 1.00, "cvr": 10.91, "roas": 10.91 }
+    }
   ],
   "campaigns": [
-    { "name": "Summer Sale", "platforms": ["Instagram", "Facebook", "TikTok", "LinkedIn", "X"], "startDate": "2025-06-01", "endDate": "2025-06-30", "revenue": 30000, "cost": 5000, "impressions": 50000, "clicks": 4000, "conversions": 350 },
-    { "name": "Back to School", "platforms": ["Instagram", "Facebook", "TikTok", "LinkedIn", "X"], "startDate": "2025-07-01", "endDate": "2025-07-31", "revenue": 22400, "cost": 4900, "impressions": 57000, "clicks": 4200, "conversions": 380 }
+    { "name": "Summer Sale", "platforms": ["Instagram", "Facebook", "TikTok", "LinkedIn", "X"], "startDate": "2025-06-01", "endDate": "2025-06-30", "revenue": 30000, "cost": 5000, "impressions": 50000, "clicks": 4000, "conversions": 350,
+      "Instagram": { "revenue": 8000, "cost": 1200, "impressions": 12000, "clicks": 900, "conversions": 80 },
+      "Facebook": { "revenue": 7000, "cost": 1000, "impressions": 11000, "clicks": 800, "conversions": 70 },
+      "TikTok": { "revenue": 9000, "cost": 1300, "impressions": 13000, "clicks": 1000, "conversions": 100 },
+      "LinkedIn": { "revenue": 3000, "cost": 700, "impressions": 7000, "clicks": 600, "conversions": 50 },
+      "X": { "revenue": 3000, "cost": 800, "impressions": 7000, "clicks": 700, "conversions": 50 }
+    },
+    { "name": "Back to School", "platforms": ["Instagram", "Facebook", "TikTok", "LinkedIn", "X"], "startDate": "2025-07-01", "endDate": "2025-07-31", "revenue": 22400, "cost": 4900, "impressions": 57000, "clicks": 4200, "conversions": 380,
+      "Instagram": { "revenue": 8500, "cost": 1300, "impressions": 13000, "clicks": 950, "conversions": 90 },
+      "Facebook": { "revenue": 6000, "cost": 900, "impressions": 10000, "clicks": 700, "conversions": 60 },
+      "TikTok": { "revenue": 5000, "cost": 1100, "impressions": 11000, "clicks": 900, "conversions": 80 },
+      "LinkedIn": { "revenue": 1400, "cost": 800, "impressions": 9000, "clicks": 800, "conversions": 70 },
+      "X": { "revenue": 1900, "cost": 800, "impressions": 14000, "clicks": 850, "conversions": 80 }
+    }
   ]
 }

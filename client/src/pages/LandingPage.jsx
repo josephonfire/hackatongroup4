@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/landingPage.css';
+import '../styles/LandingPage.css';
 import LoginPage from '../components/Login';
 import {Logo} from '../components/Logotipo';
 

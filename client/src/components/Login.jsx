@@ -25,7 +25,7 @@ function Login() {
         localStorage.setItem('token', data.token);
         localStorage.setItem('email', email);
         console.log('Login successful:', data);
-        navigate(`/profile/${email}`);
+        navigate('/profile');
       } else {
         console.error('Login failed:', data.message);
         alert('Login failed: ' + data.message);
