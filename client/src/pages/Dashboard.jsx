@@ -1219,7 +1219,7 @@ export default function Dashboard() {
               },
             }}
           >
-            Salvar
+            Save
           </Button>
         </DialogActions>
       </Dialog>
