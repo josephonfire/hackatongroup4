@@ -116,10 +116,10 @@ O front estará em http://localhost:3000
 ---
 
 ## Equipa
-- @josephonfire (José Pedro)
-- @Ellie-Yeah (Elisabete F)
-- @Gllp2 (Gonçalo Laureano)
-- @Verdocas (Pedro Fernandes)
+- josephonfire (José Pedro) https://github.com/josephonfire
+- Ellie-Yeah (Elisabete F) https://github.com/Ellie-Yeah
+- Gllp2 (Gonçalo Laureano) http://github.com/Gllp2
+- Verdocas (Pedro Fernandes) https://github.com/Verdocas
 
 ---
 
