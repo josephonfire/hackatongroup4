@@ -65,7 +65,7 @@ function CustomTooltip({ active, payload, label, whiteBg }) {
 export default function ModernLineChart({ data, whiteBg, height = 180 }) {
   return (
     <ResponsiveContainer width="100%" height={height}>
-      <LineChart data={data} margin={{ top: 8, right: 12, left: 0, bottom: 8 }}>
+      <LineChart data={data} margin={{ top: 8, right: 28, left: 0, bottom: 8 }}>
         <CartesianGrid
           stroke={whiteBg ? "#e0e0e0" : "#333"}
           strokeDasharray="3 3"
