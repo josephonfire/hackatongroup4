@@ -74,6 +74,11 @@ export default function Profile({ connectedSocials = [], onChange }) {
     if (onChange) onChange(updated);
   };
 
+  const handleLogout = () => {
+    
+    navigate("/");
+  };
+
   return (
     <Box
       sx={{
@@ -154,6 +159,7 @@ export default function Profile({ connectedSocials = [], onChange }) {
           </Typography>
         </Box>
         <Button
+          onClick={handleLogout}
           sx={{
             ml: { md: "auto" },
             mt: { xs: 2, md: 0 },
