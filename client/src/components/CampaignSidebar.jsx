@@ -135,7 +135,7 @@ export default function CampaignSidebar({
           className="campaign-sidebar-title"
           style={{ color: sidebarText || "#fff" }}
         >
-          AdCharts
+          AdCharter
         </span>
         <AriaButton
           aria-label="Expand navigation menu"
@@ -163,7 +163,7 @@ export default function CampaignSidebar({
                   className="campaign-sidebar-header"
                   style={{ marginBottom: 16 }}
                 >
-                  <span className="campaign-sidebar-title">AdCharts</span>
+                  <span className="campaign-sidebar-title">AdCharter</span>
                   <button
                     onClick={onBgToggle}
                     aria-label="Alternar tema"
