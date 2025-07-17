@@ -252,7 +252,7 @@ export default function Profile({ connectedSocials = [], onChange }) {
                   },
                 }}
               >
-                {connected.includes(social.key) ? "Desconectar" : "Conectar"}
+                {connected.includes(social.key) ? "Disconnect" : "Connect"}
               </Button>
             </Card>
           </Grid>
@@ -270,7 +270,7 @@ export default function Profile({ connectedSocials = [], onChange }) {
           p: 0,
         }}
       >
-        © {new Date().getFullYear()} AdCharter. Todos os direitos reservados.
+        © {new Date().getFullYear()} AdCharter. All Rights Reserved.
       </Typography>
     </Box>
   );
