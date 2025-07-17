@@ -92,7 +92,7 @@ export default function ModernSidebar({ view, setView, dashboardRef }) {
               whiteSpace: "nowrap",
             }}
           >
-            AdCharts
+            AdCharter
           </span>
         </Box>
       </Box>
